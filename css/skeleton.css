@@ -25,22 +25,12 @@
 - Media Queries
 */
 
-:root{
-  --text-color: #343633;
-  --emphasis-color: #E26D5C;
-  --bubble-color: #1FFFDA;
-  --bg-color: #ffffff;
-  --button-color: #5497A7;
-}
-
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 .container {
   position: relative;
   width: 100%;
-  height: 100%;
   max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
@@ -56,7 +46,6 @@
   .container {
     width: 85%;
     padding: 0; }
-
 }
 
 /* For devices larger than 550px */
@@ -124,8 +113,6 @@
 }
 
 
-
-
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
@@ -134,12 +121,11 @@ are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%; }
 body {
-  background: radial-gradient(rgb(255,255,255,1),rgb(255,255,255,0));
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
   font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: var(--text-color)}
+  color: #222; }
 
 
 /* Typography
@@ -392,17 +378,6 @@ hr {
   margin-bottom: 3.5rem;
   border-width: 0;
   border-top: 1px solid #E1E1E1; }
-
-canvas{
-    position:fixed;
-    left:0;
-    top:0;
-    z-index:-1;
-  }
-
-  .color-emphasis{
-    color: var(--emphasis-color);
-  }
 
 
 /* Clearing

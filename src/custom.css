@@ -1,14 +1,46 @@
+/* Sections
+----------------------------------------------------------------------------------- */
+
+:root{
+  --text-color: #343633;
+  --emphasis-color: #E26D5C;
+  --bubble-color: #1FFFDA;
+  --bg-color: #ffffff;
+  --button-color: #5497A7;
+}
+
+.splash{
+  padding: 2rem;
+}
+
+.section{
+
+}
+
 .value-img {
-  background: white;
+  max-width: 80%;
+  height: auto;
   display: block;
   text-align: center;
   margin: 2.5rem auto 0;
 }
 
 .header{
-  background: radial-gradient(rgb(255,255,255,1),rgb(255,255,255,0));
-  margin: 0;
-  height: 100%;
   text-align: center;
+}
+
+canvas{
+  position:fixed;
+  left:0;
+  top:0;
+  z-index:-1;
+}
+
+.radial{
+  background: radial-gradient(rgb(255,255,255,1),rgb(255,255,255,0));
+}
+
+.greeting{
+  padding: 30% 0 70% 0;
 }
 
