@@ -1,0 +1,14 @@
+.value-img {
+  background: white;
+  display: block;
+  text-align: center;
+  margin: 2.5rem auto 0;
+}
+
+.header{
+  background: radial-gradient(rgb(255,255,255,1),rgb(255,255,255,0));
+  margin: 0;
+  height: 100%;
+  text-align: center;
+}
+
