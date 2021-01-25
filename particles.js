@@ -3,6 +3,7 @@
 
 let canvasHeight = window.innerHeight
 let canvasWidth  = window.innerWidth
+let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
 let parCount = 300
 const parColor = 'rgb(0, 250, 204, 0.8)'
@@ -25,8 +26,28 @@ const resizeCanvas = () => {
   init()
 }
 
+const rollParticles = () =>{
+  console.log('hello')
+  let previous = scrollTop
+  scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+  for(particle of particles){
+    if(particle.dY <= 0.5 || particle.dY >= -0.5){
+
+  
+    if(previous < scrollTop){
+      
+      particle.dY -= randomFromRange(1,10) * 0.002
+    }
+    else{
+      particle.dY += randomFromRange(1,10) * 0.002
+    }
+  }
+  }
+}
+
 
 window.onresize = resizeCanvas
+window.onscroll = rollParticles
 
 const canvas = document.getElementById('particles')
 const ctx = canvas.getContext('2d','particles')
@@ -52,7 +73,11 @@ class Particle {
       ? -this.dY 
       : this.dY
     //move particle
-      this.x += this.dX
+    if(this.dY > 0.2 ||this.dY < -0.2){
+      this.dY *= 0.999
+    }
+      
+      this.x += this.dX 
       this.y += this.dY
   
   }
@@ -75,7 +100,7 @@ const init = () => {
     for(let i = 0; i < leng; i++){
       let particle = new Particle(
         (randomFromRange(2 * parRadius, canvasWidth - parRadius)), //x
-        (randomFromRange(2 * parRadius, canvasHeight - parRadius)), //y
+        (randomFromRange(canvasHeight/2, canvasHeight - parRadius)), //y
         ((Math.random()) - 0.5), //dX
         ((Math.random()) - 0.5) //dY
       )
