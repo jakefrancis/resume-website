@@ -2,11 +2,33 @@
 ----------------------------------------------------------------------------------- */
 
 :root{
-  --text-color: #343633;
+  --text-color: rgb(52, 54, 51);
   --emphasis-color: #E26D5C;
   --bubble-color: #1FFFDA;
   --bg-color: #ffffff;
   --button-color: #5497A7;
+}
+
+.fade-name{
+  color: rgb(52, 54, 51,0); 
+  animation-name: fade-name;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s; 
+}
+
+.fade-in{
+  color: rgb(52, 54, 51,0); 
+  animation-name: fade-name;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s; 
+}
+
+
+@keyframes fade-name{
+  0%{color: rgb(52, 54, 51,0); }
+  100%{color: #222;}
 }
 
 
