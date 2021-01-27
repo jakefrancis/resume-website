@@ -109,7 +109,9 @@ const init = () => {
 }
 
 const clearScreen = () => {
-  ctx.fillStyle = '#858289'
+  //ctx.fillStyle = '#858289'
+  ctx.fillStyle = '#fff'
+
   ctx.fillRect(0,0,canvasWidth,canvasHeight)
 }
 
@@ -129,6 +131,9 @@ const canvasLoop = () => {
 init()
 
 window.requestAnimationFrame(canvasLoop)
+
+console.log('Oh looks like we have a detective!🔍')
+console.log('Looking for anything in particular? contact: jake@hellojake.com')
 
 
 

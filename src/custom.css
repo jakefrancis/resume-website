@@ -36,8 +36,8 @@
   padding: 2rem;
 }
 
-.section-about-me{
-
+.about-me{
+  padding-bottom: 10rem;
 }
 
 .value-img {
@@ -78,7 +78,8 @@ p{
 }
 
 .radial{
-  background: radial-gradient(rgb(133,130,137,1),rgb(133,130,137,0));
+  /*background: radial-gradient(rgb(133,130,137,1),rgb(133,130,137,0));*/
+  background: radial-gradient(rgb(255,255,255,1),rgba(255, 255, 255, 0));
 }
 
 .greeting{
