@@ -15,15 +15,19 @@ if(canvasWidth < 450){
 }
 
 const resizeCanvas = () => {
+
   canvasHeight = window.innerHeight
   canvasWidth  = window.innerWidth
-  parCount = 300
-  parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
-  if(canvasWidth < 450){
-    parRadius = Math.floor((canvasHeight + canvasWidth) / 250)
-    parCount = 150
-  }
-  init()
+  canvas.width = canvasWidth
+  canvas.height = canvasHeight
+  resize()
+}
+
+const resize = () => {
+    particles.forEach( (particle) => {
+      particle.x = particle.x > canvasWidth ?  canvasWidth - parRadius : particle.x
+      particle.x = particle.x < 0 ? parRadius : particle.x
+    })
 }
 
 const rollParticles = () =>{
