@@ -25,8 +25,8 @@ const resizeCanvas = () => {
 
 const resize = () => {
     particles.forEach( (particle) => {
-      particle.x = particle.x > canvasWidth ?  canvasWidth - parRadius : particle.x
-      particle.x = particle.x < 0 ? parRadius : particle.x
+      particle.x = particle.x > canvasWidth ?  randomFromRange( canvasWidth - parRadius * 4,canvasWidth - parRadius * 2)  : particle.x
+      particle.y = particle.y > canvasHeight ?  canvasHeight - parRadius : particle.y
     })
 }
 
