@@ -5,7 +5,7 @@ let canvasHeight = window.innerHeight
 let canvasWidth  = window.innerWidth
 let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-let parCount = 300
+let parCount = 100
 const parColor = 'rgb(0, 250, 204, 0.8)'
 let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
 
@@ -68,6 +68,13 @@ class Particle {
     this.dX = dX
     this.dY = dY
   }
+
+  calculateDistanc(arr){
+    arr.forEach(particle => {
+      
+    })
+  }
+
   move(){
     //verify if out of bounds
     this.dX = (this.dX + this.x) < 0 + parRadius|| (this.dX + this.x) > canvasWidth - parRadius
@@ -134,7 +141,7 @@ const canvasLoop = () => {
 
 init()
 
-window.requestAnimationFrame(canvasLoop)
+//window.requestAnimationFrame(canvasLoop)
 
 console.log('Oh looks like we have a detective!🔍')
 console.log('Looking for anything in particular? contact: jake@hellojake.com')
