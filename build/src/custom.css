@@ -8,6 +8,9 @@
   --bg-color: #ffffff;
   --button-color: #5497A7;
 }
+body{
+  background: rgb(133,130,137,1)
+}
 
 .fade-name{
   color: rgb(52, 54, 51,0); 
