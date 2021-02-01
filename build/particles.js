@@ -40,12 +40,9 @@ const resize = () => {
     })
 }
 
-let rollTimer;
 
 const rollParticles = () =>{
 
-  clearInterval(rollTimer);
-  console.log('hello')
   let previous = scrollTop
   scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   for(particle of particles){
