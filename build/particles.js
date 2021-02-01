@@ -6,6 +6,7 @@ let canvasWidth  = window.innerWidth
 let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
 let parCount = 300
+
 const parColor = 'rgb(0, 250, 204, 0.8)'
 let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
 
@@ -25,8 +26,11 @@ const resizeCanvas = () => {
 
 const resize = () => {
     particles.forEach( (particle) => {
-      particle.x = particle.x > canvasWidth ?  canvasWidth - parRadius : particle.x
-      particle.x = particle.x < 0 ? parRadius : particle.x
+      if(particle.x > canvasWidth){
+          particle.x = randomFromRange(2 * parRadius, canvasWidth - parRadius)
+          particle.y = randomFromRange(canvasHeight/2, canvasHeight - parRadius)
+          particle.alpha = 0
+      }
     })
 }
 
@@ -67,6 +71,8 @@ class Particle {
     this.y = y
     this.dX = dX
     this.dY = dY
+    this.alpha = 0
+    this.color 
   }
   move(){
     //verify if out of bounds
@@ -89,7 +95,13 @@ class Particle {
     ctx.beginPath()
     ctx.arc(this.x,this.y,parRadius, 0, 2 * Math.PI, false)
     ctx.lineWidth = 1
-    ctx.strokeStyle = parColor
+    if(this.alpha !== 100){
+      this.alpha += randomFromRange(0,2)
+      if(this.alpha > 100){
+        this.alpha = 100
+      }
+    }
+    ctx.strokeStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
     ctx.stroke()
   }
 }
