@@ -19,22 +19,43 @@ if(canvasWidth < 450){
 let resizeTimer;
 
 const resizeCanvas = () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    console.log('resize')
-    canvasHeight = window.innerHeight
-    canvasWidth  = window.innerWidth
-    canvas.width = canvasWidth
-    canvas.height = canvasHeight
-    resize()
-  },500) 
+    clearTimeout(resizeTimer);
+
+   resizeTimer = setTimeout(() => {
+      let wider =  window.innerWidth / canvasWidth
+      let taller = window.innerHeight / canvasHeight
+      console.log('short', wider)
+      console.log('thin', taller)
+
+      console.log('resize')
+      canvasHeight = window.innerHeight
+      canvasWidth  = window.innerWidth
+      canvas.style.width = Math.floor(canvasWidth) + 'px'
+      canvas.style.height = Math.floor(canvasHeight) + 'px'
+      canvas.width = Math.floor(canvasWidth) * dpr
+      canvas.height = Math.floor(canvasHeight) * dpr
+      ctx.scale(dpr,dpr)
+      resize(wider, taller)
+    },150)
+
+
 }
 
-const resize = () => {
+const resize = (wider, taller) => {
     particles.forEach( (particle) => {
+      if (wider > 1) {
+        particle.dX *= wider
+      }
+      
+      if (taller > 1){
+        particle.dY *= taller
+      } 
+      
       if(particle.x > canvasWidth || particle.y > canvasHeight){
           particle.x = randomFromRange(2 * parRadius, canvasWidth - parRadius)
           particle.y = randomFromRange(canvasHeight/2, canvasHeight - parRadius)
+          particle.dX = (Math.random()) - 0.5
+          particle.dY = (Math.random()) - 0.5
           particle.alpha = 0
       }
     })
@@ -66,18 +87,19 @@ window.onscroll = rollParticles
 
 
 
+
+
 const canvas = document.getElementById('particles')
 const dpr = window.devicePixelRatio  || 1
-
 const ctx = canvas.getContext('2d','particles')
 
+canvas.style.width = Math.floor(canvasWidth) + 'px'
+canvas.style.height = Math.floor(canvasHeight) + 'px'
 
-canvas.width = canvasWidth / dpr
-canvas.height = canvasHeight / dpr
+canvas.width = Math.floor(canvasWidth) * dpr
+canvas.height = Math.floor(canvasHeight) * dpr
 
 ctx.scale(dpr, dpr)
-
-console.log(canvas.width)
 
 let particles = []
 
@@ -88,7 +110,7 @@ class Particle {
     this.dX = dX
     this.dY = dY
     this.alpha = 0
-    this.color 
+    this.topSpeed = 0.6 - (Math.random() / 3)
   }
   move(){
     //verify if out of bounds
@@ -99,8 +121,11 @@ class Particle {
       ? -this.dY 
       : this.dY
     //move particle
-    if(this.dY > 0.2 ||this.dY < -0.2){
-      this.dY *= 0.999
+    if(this.dY >  this.topSpeed ||this.dY < -this.topSpeed){
+      this.dY *= 0.998
+    }
+    if(this.dX > this.topSpeed||this.dX < -this.topSpeed){
+      this.dX *= 0.998
     }
       
       this.x += this.dX 
