@@ -1,11 +1,12 @@
 //Constants
 
 
-let canvasHeight = window.innerHeight
-let canvasWidth  = window.innerWidth
+
 let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
 let parCount = 300
+let canvasHeight = window.innerHeight
+let canvasWidth  = window.innerWidth
 
 const parColor = 'rgb(0, 250, 204, 0.8)'
 let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
@@ -15,18 +16,23 @@ if(canvasWidth < 450){
   parCount = 150
 }
 
-const resizeCanvas = () => {
+let resizeTimer;
 
-  canvasHeight = window.innerHeight
-  canvasWidth  = window.innerWidth
-  canvas.width = canvasWidth
-  canvas.height = canvasHeight
-  resize()
+const resizeCanvas = () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    console.log('resize')
+    canvasHeight = window.innerHeight
+    canvasWidth  = window.innerWidth
+    canvas.width = canvasWidth
+    canvas.height = canvasHeight
+    resize()
+  },500) 
 }
 
 const resize = () => {
     particles.forEach( (particle) => {
-      if(particle.x > canvasWidth){
+      if(particle.x > canvasWidth || particle.y > canvasHeight){
           particle.x = randomFromRange(2 * parRadius, canvasWidth - parRadius)
           particle.y = randomFromRange(canvasHeight/2, canvasHeight - parRadius)
           particle.alpha = 0
@@ -34,7 +40,11 @@ const resize = () => {
     })
 }
 
+let rollTimer;
+
 const rollParticles = () =>{
+
+  clearInterval(rollTimer);
   console.log('hello')
   let previous = scrollTop
   scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
@@ -57,11 +67,20 @@ const rollParticles = () =>{
 window.onresize = resizeCanvas
 window.onscroll = rollParticles
 
+
+
 const canvas = document.getElementById('particles')
+const dpr = window.devicePixelRatio  || 1
+
 const ctx = canvas.getContext('2d','particles')
 
-canvas.width = canvasWidth
-canvas.height = canvasHeight
+
+canvas.width = canvasWidth / dpr
+canvas.height = canvasHeight / dpr
+
+ctx.scale(dpr, dpr)
+
+console.log(canvas.width)
 
 let particles = []
 
