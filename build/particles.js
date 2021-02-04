@@ -11,7 +11,7 @@ let canvasWidth  = window.innerWidth
 const parColor = 'rgb(0, 250, 204, 0.8)'
 let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
 
-if(canvasWidth < 450){
+if(canvasWidth < 450 || canvasHeight < 450){
   parRadius = Math.floor((canvasHeight + canvasWidth) / 250)
   parCount = 150
 }
@@ -19,15 +19,11 @@ if(canvasWidth < 450){
 let resizeTimer;
 
 const resizeCanvas = () => {
-    clearTimeout(resizeTimer);
-
-   resizeTimer = setTimeout(() => {
+  
+      let previousWidth = canvasWidth
+      let previousHeight  = canvasHeight
       let wider =  window.innerWidth / canvasWidth
       let taller = window.innerHeight / canvasHeight
-      console.log('short', wider)
-      console.log('thin', taller)
-
-      console.log('resize')
       canvasHeight = window.innerHeight
       canvasWidth  = window.innerWidth
       canvas.style.width = Math.floor(canvasWidth) + 'px'
@@ -35,20 +31,21 @@ const resizeCanvas = () => {
       canvas.width = Math.floor(canvasWidth) * dpr
       canvas.height = Math.floor(canvasHeight) * dpr
       ctx.scale(dpr,dpr)
-      resize(wider, taller)
-    },150)
-
-
+      resize(wider, taller, previousWidth, previousHeight) 
 }
 
-const resize = (wider, taller) => {
+const resize = (wider, taller, previousWidth, previousHeight) => {
+    let adjustedCenterX = Math.floor((canvasWidth / 2) - (previousWidth / 2))
+    let adjustedCenterY = Math.floor((canvasHeight / 2) - (previousHeight / 2))
     particles.forEach( (particle) => {
       if (wider > 1) {
         particle.dX *= wider
+        particle.x += adjustedCenterX
       }
       
       if (taller > 1){
         particle.dY *= taller
+        particle.y += adjustedCenterY
       } 
       
       if(particle.x > canvasWidth || particle.y > canvasHeight){
