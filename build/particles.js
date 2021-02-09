@@ -7,6 +7,7 @@ let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (docum
 let parCount = 300
 let canvasHeight = window.innerHeight
 let canvasWidth  = window.innerWidth
+let mobile = false
 
 const parColor = 'rgb(0, 250, 204, 0.8)'
 let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
@@ -14,24 +15,29 @@ let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
 if(canvasWidth < 450 || canvasHeight < 450){
   parRadius = Math.floor((canvasHeight + canvasWidth) / 250)
   parCount = 150
+  mobile = true
 }
 
 let resizeTimer;
 
 const resizeCanvas = () => {
-  
-      let previousWidth = canvasWidth
-      let previousHeight  = canvasHeight
-      let wider =  window.innerWidth / canvasWidth
-      let taller = window.innerHeight / canvasHeight
-      canvasHeight = window.innerHeight
-      canvasWidth  = window.innerWidth
-      canvas.style.width = Math.floor(canvasWidth) + 'px'
-      canvas.style.height = Math.floor(canvasHeight) + 'px'
-      canvas.width = Math.floor(canvasWidth) * dpr
-      canvas.height = Math.floor(canvasHeight) * dpr
-      ctx.scale(dpr,dpr)
-      resize(wider, taller, previousWidth, previousHeight) 
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    let previousWidth = canvasWidth
+    let previousHeight  = canvasHeight
+    let wider =  window.innerWidth / canvasWidth
+    let taller = window.innerHeight / canvasHeight
+    canvasHeight = window.innerHeight
+    canvasWidth  = window.innerWidth
+    canvas.style.width = Math.floor(canvasWidth) + 'px'
+    canvas.style.height = Math.floor(canvasHeight) + 'px'
+    canvas.width = Math.floor(canvasWidth) * dpr
+    canvas.height = Math.floor(canvasHeight) * dpr
+    ctx.scale(dpr,dpr)
+    resize(wider, taller, previousWidth, previousHeight)
+
+  },10)
+     
 }
 
 const resize = (wider, taller, previousWidth, previousHeight) => {
@@ -40,12 +46,18 @@ const resize = (wider, taller, previousWidth, previousHeight) => {
     particles.forEach( (particle) => {
       if (wider > 1) {
         particle.dX *= wider
-        particle.x += adjustedCenterX
+        if(!mobile){
+          particle.x += adjustedCenterX
+        }
+        
       }
       
       if (taller > 1){
         particle.dY *= taller
-        particle.y += adjustedCenterY
+        if(!mobile){
+          particle.y += adjustedCenterY
+        }
+        
       } 
       
       if(particle.x > canvasWidth || particle.y > canvasHeight){
