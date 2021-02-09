@@ -30,6 +30,22 @@ const buildProjectSection = (projectsArr) => {
       description.textContent = project.description
       container.appendChild(description)
 
+      //live link
+      const liveLink = document.createElement('a')
+      liveLink.setAttribute('href', project.live)
+      liveLink.innerHTML = 'Live '
+      container.appendChild(liveLink)
+      //code link
+      const codeLink = document.createElement('a')
+      codeLink.setAttribute('href', project.code)
+      codeLink.innerHTML = 'Source Code '
+
+      const gitHubLogo = document.createElement('img')
+      gitHubLogo.className = 'code-logo'
+      gitHubLogo.src = 'images/logos/github.svg'
+      codeLink.appendChild(gitHubLogo)
+      container.appendChild(codeLink)
+
       //images container
 
       const imageContainer = document.createElement('div')
@@ -39,6 +55,7 @@ const buildProjectSection = (projectsArr) => {
       const image = document.createElement('img')
       image.className = 'value-img'
       image.src = project.image
+      image.setAttribute('href', liveLink)
 
       imageContainer.appendChild(image)
 

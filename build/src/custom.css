@@ -56,6 +56,10 @@ body{
   margin: auto 0;
 }
 
+.code-logo{
+  height: 3rem;
+}
+
 .unordered-list{
   padding-left: 2rem;
 }
