@@ -37,6 +37,7 @@ const buildProjectSection = (projectsArr) => {
       imageContainer.className = 'six columns'
 
       const image = document.createElement('img')
+      image.className = 'value-img'
       image.src = project.image
 
       imageContainer.appendChild(image)
