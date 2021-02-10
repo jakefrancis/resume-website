@@ -17,10 +17,10 @@ const buildProjectSection = (projectsArr) => {
       projectContainer.className = 'row'
 
       const container = document.createElement('div')
-      container.className = 'six columns'
+      container.className = 'six columns radial'
       //create title
       const title = document.createElement('h3')
-      title.className = 'title radial'
+      title.className = 'title radial color-emphasis'
       title.textContent = project.title
       container.appendChild(title)
 
@@ -30,14 +30,24 @@ const buildProjectSection = (projectsArr) => {
       description.textContent = project.description
       container.appendChild(description)
 
+      //tech used
+
+      project.technologies.forEach((tech) => {
+        const skill = document.createElement('code')
+        skill.textContent = tech
+        container.appendChild(skill)
+      })
+
       //live link
       const liveLink = document.createElement('a')
       liveLink.setAttribute('href', project.live)
       liveLink.innerHTML = 'Live '
+      liveLink.className ='radial'
       container.appendChild(liveLink)
       //code link
       const codeLink = document.createElement('a')
       codeLink.setAttribute('href', project.code)
+      codeLink.className = 'radial'
       codeLink.innerHTML = 'Source Code '
 
       const gitHubLogo = document.createElement('img')

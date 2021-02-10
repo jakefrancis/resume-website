@@ -216,8 +216,9 @@ const init = () => {
 }
 
 const clearScreen = () => {
-  //ctx.fillStyle = 'white'
+
   ctx.fillStyle = 'rgb(133,130,137,1)'
+  ctx.fillStyle = 'white'
 
   ctx.fillRect(0,0,canvasWidth,canvasHeight)
 }
