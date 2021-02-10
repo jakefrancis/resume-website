@@ -10,6 +10,8 @@ const projectsData = [
 ]
 */
 
+/*
+
 const buildProjectSection = (projectsArr) => {
     const portfolioContainer = document.getElementById('portfolioContainer')
     projectsArr.forEach((project) => {
@@ -69,3 +71,5 @@ const buildProjectSection = (projectsArr) => {
 
 
 buildProjectSection(projectsData)
+
+*/
