@@ -3,15 +3,47 @@
 
 :root{
   --text-color: rgb(52, 54, 51);
-  --emphasis-color: #E26D5C;
+  --emphasis-color: #ffcc33;
   --bubble-color: #1FFFDA;
   --bg-color: #ffffff;
   --button-color: #5497A7;
 }
+
+
 body{
   background: rgb(133,130,137,1)
 
 }
+
+.color-emphasis{
+  color: var(--emphasis-color)
+}
+
+
+.fade-in{
+  color: rgb(52, 54, 51,0); 
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s; 
+}
+
+.fade-career{
+  color: rgb(52, 54, 51,0); 
+  animation-name: fade-in;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 3s; 
+}
+
+.fade-career-name{
+  color: rgb(52, 54, 51,0); 
+  animation-name: fade-name;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 4s; 
+}
+
 
 .fade-name{
   color: rgb(52, 54, 51,0); 
@@ -21,19 +53,19 @@ body{
   animation-delay: 2s; 
 }
 
-.fade-in{
-  color: rgb(52, 54, 51,0); 
-  animation-name: fade-name;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-delay: 1s; 
+
+@keyframes fade-in{
+  0%{color: rgb(52, 54, 51,0); }
+  100%{color: #222;}
 }
 
 
 @keyframes fade-name{
   0%{color: rgb(52, 54, 51,0); }
-  100%{color: #222;}
+  100%{color: var(--emphasis-color);}
+
 }
+
 
 
 .splash{

@@ -10,7 +10,8 @@ let canvasWidth  = window.innerWidth
 let mobile = false
 
 const parColor = 'rgb(0, 250, 204, 0.8)'
-let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
+//let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
+let parRadius = 5
 
 if(canvasWidth < 450 || canvasHeight < 450){
   parRadius = Math.floor((canvasHeight + canvasWidth) / 250)
@@ -151,6 +152,8 @@ class Particle {
         this.alpha = 100
       }
     }
+    ctx.fillStyle = `rgb(0, 250, 204, ${this.alpha / 400})`
+    ctx.fill()
     ctx.strokeStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
     ctx.stroke()
   }
