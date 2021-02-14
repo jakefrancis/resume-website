@@ -115,7 +115,7 @@ body{
   grid-row-end: 4;
 }
 .border{
-  border: var(--dark-bg-color) solid 1rem;
+  border: var(--dark-bg-color) solid 0.5rem;
   border-radius: 2rem 0.5rem 2rem 0.5rem;
   padding: 1rem
 }
@@ -225,6 +225,25 @@ p{
 
 a{
   display: block;
+}
+
+.portfolioContainer{
+ width: 90%;
+ margin: 0 auto;
+
+}
+
+.left-arrow,.right-arrow{
+  position: absolute;
+  top: 50%;
+}
+
+.left-arrow{
+  left: 0;
+}
+
+.right-arrow{
+  right: 0
 }
 
 

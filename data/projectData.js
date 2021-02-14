@@ -18,9 +18,7 @@ const projectsData = [
   },
   {
     title: "Paging Alarm Clock",
-    description: `An alarm can be created to send a custom or automated message 
-    to an employee's pager. This came about from a need to prevent my fellow chemists from missing 
-    time sensitive and legally required samples that monitor pollution.`,
+    description: `Sends a custom or automated message to an employees pager at a designated time`,
     live: 'hellojake.com/tetris',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/tetris-rewrite',
