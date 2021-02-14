@@ -17,16 +17,16 @@ const buildProjectSection = (projectsArr) => {
       projectContainer.className = 'row'
 
       const container = document.createElement('div')
-      container.className = 'six columns radial'
+      container.className = 'six columns'
       //create title
       const title = document.createElement('h3')
-      title.className = 'title radial color-emphasis'
+      title.className = 'title color-emphasis'
       title.textContent = project.title
       container.appendChild(title)
 
       //create description
       const description = document.createElement('p')
-      description.className = 'description radial'
+      description.className = 'description'
       description.textContent = project.description
       container.appendChild(description)
 
@@ -42,12 +42,12 @@ const buildProjectSection = (projectsArr) => {
       const liveLink = document.createElement('a')
       liveLink.setAttribute('href', project.live)
       liveLink.innerHTML = 'Live '
-      liveLink.className ='radial'
+      liveLink.className =''
       container.appendChild(liveLink)
       //code link
       const codeLink = document.createElement('a')
       codeLink.setAttribute('href', project.code)
-      codeLink.className = 'radial'
+      codeLink.className = ''
       codeLink.innerHTML = 'Source Code '
 
       const gitHubLogo = document.createElement('img')

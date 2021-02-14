@@ -124,7 +124,7 @@ class Particle {
     this.alpha = 0
     this.topSpeed = 0.6 - (Math.random() / 3)
     this.angle = randomFromRange(0,360)
-    this.rotation = randomFromRange(2,4) === 2 ? Math.random() + 0.5 : -(Math.random() + 0.5)
+    this.rotation = randomFromRange(2,4) === 2 ? Math.random() * 10 : -(Math.random() * 10)
   }
   move(){
     //verify if out of bounds
@@ -176,6 +176,7 @@ class Particle {
       }
     }
     ctx.fillStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
+    ctx.fillStyle = '#002e4d'
     ctx.fill()
     ctx.closePath()
 
@@ -183,6 +184,7 @@ class Particle {
     ctx.beginPath()
     ctx.arc(rotation.px, rotation.py,this.electronRadius, 0, 2 * Math.PI, false)
     ctx.strokeStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
+    ctx.strokeStyle = '#002e4d'
     ctx.fill()
     ctx.stroke()
     ctx.closePath()
@@ -218,6 +220,7 @@ const init = () => {
 const clearScreen = () => {
   ctx.fillStyle = 'white'
   ctx.fillStyle = 'rgb(133,130,137,1)'
+  ctx.fillStyle = '#153956'
   
 
   ctx.fillRect(0,0,canvasWidth,canvasHeight)

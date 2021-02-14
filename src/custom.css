@@ -3,14 +3,23 @@
 
 :root{
   --text-color: rgb(52, 54, 51);
-  --emphasis-color: #ffcc33;
+  --font-color: #b9d1f2;
+  --heading-color: #f5f2e8;
+  --emphasis-color: #f2a278;
   --bubble-color: #1FFFDA;
   --bg-color: #ffffff;
   --button-color: #5497A7;
+
+  color: var(--font-color)
+}
+
+code{
+  color: #222
 }
 
 
 body{
+  color: #b9d1f2;
   background: rgb(133,130,137,1)
 
 }
@@ -54,9 +63,10 @@ body{
 }
 
 
+
 @keyframes fade-in{
   0%{color: rgb(52, 54, 51,0); }
-  100%{color: #222;}
+  100%{color: var(--heading-color);}
 }
 
 
@@ -65,6 +75,8 @@ body{
   100%{color: var(--emphasis-color);}
 
 }
+
+
 
 
 
@@ -87,6 +99,16 @@ body{
 
 .img-logo{
   margin: auto 0;
+}
+
+
+.link-logo{
+  height: 6rem;
+
+}
+
+img.link-logo:hover{
+  filter: invert(1)
 }
 
 .code-logo{
