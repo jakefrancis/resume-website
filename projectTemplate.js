@@ -10,11 +10,14 @@ const projectsData = [
 ]
 */
 
-const buildProjectSection = (projectsArr) => {
-    const portfolioContainer = document.getElementById('portfolioContainer')
-    projectsArr.forEach((project) => {
+let currentIndex = 0
+
+const buildProjectSection = (project) => {
+
+      const portfolioContainer = document.getElementById('portfolioContainer')
       const projectContainer = document.createElement('div')
       projectContainer.className = 'project row border'
+      projectContainer.setAttribute('id', 'projectContainer')
 
       const container = document.createElement('div')
       container.className = 'six columns'
@@ -73,9 +76,36 @@ const buildProjectSection = (projectsArr) => {
       projectContainer.appendChild(container)
       projectContainer.appendChild(imageContainer)
       portfolioContainer.appendChild(projectContainer)
-    })
+    
 
 }
 
+const clearCurrentProject = () => {
+  const portfolioContainer = document.getElementById('portfolioContainer')
+  while(portfolioContainer.firstChild){
+    portfolioContainer.removeChild(portfolioContainer.lastChild)
+  }
+}
 
-buildProjectSection(projectsData)
+
+buildProjectSection(projectsData[0])
+
+const rightArrow = document.getElementById('right-arrow')
+
+const next = (event) => {
+  clearCurrentProject()
+  currentIndex = currentIndex + 1 === projectsData.length ? 0 : currentIndex + 1
+  buildProjectSection(projectsData[currentIndex])
+}
+rightArrow.addEventListener('click',(next))
+
+const leftArrow = document.getElementById('left-arrow')
+
+const prev = (event) => {
+  clearCurrentProject()
+  currentIndex = currentIndex - 1 === -1 ? projectsData.length - 1 : currentIndex - 1
+  buildProjectSection(projectsData[currentIndex])
+}
+
+leftArrow.addEventListener('click',(prev))
+
