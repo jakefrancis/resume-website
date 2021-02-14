@@ -176,7 +176,7 @@ class Particle {
       }
     }
     ctx.fillStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
-    ctx.fillStyle = '#002e4d'
+    ctx.fillStyle = '#0d5d87'
     ctx.fill()
     ctx.closePath()
 
@@ -184,7 +184,7 @@ class Particle {
     ctx.beginPath()
     ctx.arc(rotation.px, rotation.py,this.electronRadius, 0, 2 * Math.PI, false)
     ctx.strokeStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
-    ctx.strokeStyle = '#002e4d'
+    ctx.strokeStyle = '#0d5d87'
     ctx.fill()
     ctx.stroke()
     ctx.closePath()
