@@ -14,7 +14,7 @@ const buildProjectSection = (projectsArr) => {
     const portfolioContainer = document.getElementById('portfolioContainer')
     projectsArr.forEach((project) => {
       const projectContainer = document.createElement('div')
-      projectContainer.className = 'row'
+      projectContainer.className = 'project row border'
 
       const container = document.createElement('div')
       container.className = 'six columns'
