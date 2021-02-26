@@ -151,6 +151,8 @@ const resetPosition = (currentPosition) => {
 }
 
 //move the slides to the center of the viewport on window resize
+
+//this needs to be extracted at some point
 const centerViewport = () => {
   posX = -sliderChildren[0].offsetWidth * (slideInView - 1
 )
@@ -159,7 +161,7 @@ const centerViewport = () => {
     card.style.transform = `translateX(${posX}px)`      
   }
 }
-window.onresize = centerViewport  
+document.onresize = centerViewport  
 }
 
 
