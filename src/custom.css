@@ -260,7 +260,7 @@ a{
 }
 
 .viewport{
- margin: 0 auto;
+  margin: 0 auto;
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: hidden;
@@ -313,11 +313,17 @@ a{
 
 .card-image{
   box-sizing: border-box;
-  grid-area: image;
+  margin: 0 auto;
+  align-self: center;
   padding: 1rem;
 	border-radius: 2rem;
   max-width: 90%;
   
+}
+
+.card-image-wrapper{
+  grid-area: image;
+  display: flex;
 }
 
 .card-description{

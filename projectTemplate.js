@@ -37,13 +37,15 @@ const buildProjectSection = (projectArray) => {
 
        const imageContainer = document.createElement('div')
 
-       imageContainer.className = 'six columns'
+       imageContainer.className = 'card-image-wrapper'
  
        const image = document.createElement('img')
        image.className = 'card-image'
        image.src = project.image
+
+       imageContainer.appendChild(image)
  
-       card.appendChild(image) 
+       card.appendChild(imageContainer) 
 
 
       //create description
