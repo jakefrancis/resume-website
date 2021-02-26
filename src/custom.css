@@ -260,12 +260,13 @@ a{
 }
 
 .viewport{
-  margin: 0 auto;
+  box-sizing: border-box;
+  margin: 0;
 	display: flex;
 	flex-wrap: nowrap;
 	overflow: hidden;
-	width: 80%;
-	min-height: 80%;
+	width: 100%;
+	min-height: 80vh;
   border: 1rem solid var(--dark-bg-color);
   border-radius: 1rem;
 }
@@ -313,22 +314,22 @@ a{
 
 .card-image{
   box-sizing: border-box;
+  width: 100%;
   margin: 0 auto;
   align-self: center;
   padding: 1rem;
 	border-radius: 2rem;
-  max-width: 90%;
   
 }
 
 .card-image-wrapper{
+  box-sizing: border-box;
   grid-area: image;
   display: flex;
 }
 
 .card-description{
   grid-area: description;
-  font-size: 1rem;
 	text-align: left;
   padding: 0 1rem;
   margin-block-end: 0em;
@@ -361,7 +362,6 @@ code{
 
 @media (min-width: 600px){
   .card-description{
-    font-size: 1.3rem;
   }
 
 .card{
@@ -402,7 +402,6 @@ code{
   .about-me-grid{
     display: grid;
     margin: 0 auto;
-    max-width: 960px;
     max-height: 100%;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
