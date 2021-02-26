@@ -141,6 +141,7 @@ body{
   display: block;
   text-align: center;
   margin: 2.5rem auto 0;
+  border-radius: 50%;
 }
 
 .img-logo{
