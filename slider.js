@@ -32,6 +32,7 @@ const buildSlider = (id) => {
 
 
   const mouseDownListener = (event) => {
+    event.preventDefault()
     //record inital X position of the mouse
 	 startX = event.clientX ? event.clientX : event.touches[0].clientX
 
@@ -44,7 +45,6 @@ const buildSlider = (id) => {
 
 
   slider.addEventListener('mousedown', mouseDownListener)
-  slider.addEventListener('touchstart', mouseDownListener)
 
   
   
@@ -81,6 +81,7 @@ slider.addEventListener('mousemove', mouseMoveListener)
 
 for(let child of sliderChildren){
     child.firstChild.addEventListener('touchmove', mouseMoveListener)
+    child.firstChild.addEventListener('touchstart', mouseDownListener)
 }
 
 const moveSlide = (distance) => {

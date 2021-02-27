@@ -21,7 +21,7 @@ code{
 
 body{
   color: #b9d1f2;
-  background: rgb(133,130,137,1)
+  background: var(--bg-color)
 
 }
 
