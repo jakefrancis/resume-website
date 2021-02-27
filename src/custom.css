@@ -298,7 +298,7 @@ a{
               "image"
               "description"
               "code";
-  width: 80%;
+  width: 100%;
 	margin: 1rem;
 	background: var(--dark-bg-color);
 	text-align: center;
@@ -320,7 +320,7 @@ a{
 
 .card-image{
   box-sizing: border-box;
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   align-self: center;
   padding: 2rem;
@@ -422,6 +422,15 @@ code{
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 3;
+  }
+
+  .card-image{
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto;
+    align-self: center;
+    padding: 2rem;
+    border-radius: 4rem;  
   }
 }
 

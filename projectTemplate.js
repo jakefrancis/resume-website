@@ -28,7 +28,7 @@ const buildProjectSection = (projectArray) => {
       card.setAttribute('id', 'card')
 
       //create title
-      const title = document.createElement('h1')
+      const title = document.createElement('h2')
       title.className = 'card-title'
       title.textContent = project.title
       card.appendChild(title)
