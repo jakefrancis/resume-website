@@ -8,7 +8,6 @@ const buildSlider = (id) => {
   
   const sliderChildren = slider.children
 
-  console.log(sliderChildren.length)
 
 
   //stores the intial value of a touch event or mouse click
@@ -33,13 +32,15 @@ const buildSlider = (id) => {
 
 
   const mouseDownListener = (event) => {
-	  event.preventDefault();
     //record inital X position of the mouse
 	 startX = event.clientX ? event.clientX : event.touches[0].clientX
-    console.log('start', startX)
+
     //mouse is being clicked	
 	  heldDown = true	
   }
+
+
+
 
 
   slider.addEventListener('mousedown', mouseDownListener)
@@ -48,7 +49,7 @@ const buildSlider = (id) => {
   
   
   const mouseUpListener = (event) => {
-	  event.preventDefault();
+    
     //no longer clicking
 	  heldDown = false 
     //resets slide to it's center at the center of the slide window
@@ -57,18 +58,18 @@ const buildSlider = (id) => {
   }
 
 document.addEventListener('mouseup', mouseUpListener)
-document.addEventListener('touchend', mouseUpListener)
+slider.addEventListener('touchend', mouseUpListener)
 
 
 const mouseMoveListener = (event) => {
-	event.preventDefault();
+  event.preventDefault()
   //the distance traveled since last mouseMove event trigger
   let current = event.clientX ? event.clientX : event.touches[0].clientX
   previous = previous === null ?  startX: previous;
-  console.log('current', current)
+
 
   let distance = current - previous 
-  console.log('distance', distance)
+
   if(heldDown) {
     moveSlide(distance)
   }	
@@ -76,7 +77,11 @@ const mouseMoveListener = (event) => {
 }
 
 slider.addEventListener('mousemove', mouseMoveListener)
-slider.addEventListener('touchmove', mouseMoveListener)
+//slider.addEventListener('touchmove', mouseMoveListener)
+
+for(let child of sliderChildren){
+    child.firstChild.addEventListener('touchmove', mouseMoveListener)
+}
 
 const moveSlide = (distance) => {
 
@@ -89,24 +94,24 @@ const moveSlide = (distance) => {
   
 		if(direction === 'left'){		
     //if the slide has moved 25% of its width, then change the index of the slide that is inview to the next slide
-			if(posX < (-cardWidth * slideInView) + (cardWidth * 0.75)){
+			if(posX < (-cardWidth * slideInView) + (cardWidth * 0.90)){
 				slideInView++
         //prevent moving to a slide that doesn't exist
 				if(slideInView > sliderChildren.length){
 					slideInView--
-					posX = (-cardWidth * slideInView) + (cardWidth * 0.75)
+					posX = (-cardWidth * slideInView) + (cardWidth * 0.90)
 				}
 				
 			}			
 		}
 		else if (direction === 'right'){
       //same as above but opposite
-			if(posX > (-cardWidth * (slideInView - 1)) + ( cardWidth * 0.25)){
+			if(posX > (-cardWidth * (slideInView - 1)) + ( cardWidth * 0.10)){
         slideInView--
         //prevent moving to a slide that doesn't exist
 				if(slideInView < 1){
 					slideInView++
-					posX = (-cardWidth * (slideInView - 1)) + ( cardWidth * 0.25)
+					posX = (-cardWidth * (slideInView - 1)) + ( cardWidth * 0.10)
 				}				
 			}			
 		}				
@@ -167,6 +172,7 @@ const resetPosition = (currentPosition) => {
 
 //this needs to be extracted at some point
 const centerViewport = () => {
+  console.log('slider')
   posX = -sliderChildren[0].offsetWidth * (slideInView - 1
 )
   for(let i = 0; i < sliderChildren.length; i++){
