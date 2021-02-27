@@ -1,5 +1,5 @@
 
-
+ let slideInView = 1;
 
 
 const buildSlider = (id) => {
@@ -15,7 +15,7 @@ const buildSlider = (id) => {
   let startX;
 
   //the slide that is in view, the first index is one, the math was easier that way.
-  let slideInView = 1;
+ 
 
   //Is the slider begin clicked or touched
   let heldDown = false
@@ -165,6 +165,6 @@ document.onresize = centerViewport
 }
 
 
-
+export {slideInView}
 export default buildSlider
 

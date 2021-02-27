@@ -28,7 +28,7 @@ const buildProjectSection = (projectArray) => {
       card.setAttribute('id', 'card')
 
       //create title
-      const title = document.createElement('h4')
+      const title = document.createElement('h1')
       title.className = 'card-title'
       title.textContent = project.title
       card.appendChild(title)
@@ -57,15 +57,22 @@ const buildProjectSection = (projectArray) => {
       //tech used
       const skillContainer = document.createElement('div')
       skillContainer.className = 'card-code-container'
+
+      const skillWrapper = document.createElement('div')
+      skillWrapper.className = 'card-code-wrapper'
+
       project.technologies.forEach((tech) => {
         const skill = document.createElement('code')
         skill.className = 'card-code'
         skill.textContent = tech
-        skillContainer.appendChild(skill)
+        skillWrapper.appendChild(skill)
       })
 
-   
+      skillContainer.appendChild(skillWrapper)
 
+     
+   
+      const livePWrapper = document.createElement('p')
       //live link
       const liveLink = document.createElement('a')
       liveLink.setAttribute('href', project.live)

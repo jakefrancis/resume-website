@@ -1,0 +1,1 @@
+import slideInView from '/slider.js'
