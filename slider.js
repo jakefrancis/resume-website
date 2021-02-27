@@ -1,5 +1,5 @@
 
- let slideInView = 1;
+
 
 
 const buildSlider = (id) => {
@@ -15,7 +15,7 @@ const buildSlider = (id) => {
   let startX;
 
   //the slide that is in view, the first index is one, the math was easier that way.
- 
+  let slideInView = 1;
 
   //Is the slider begin clicked or touched
   let heldDown = false
@@ -161,10 +161,10 @@ const centerViewport = () => {
     card.style.transform = `translateX(${posX}px)`      
   }
 }
-document.onresize = centerViewport  
+window.addEventListener('window:resize', centerViewport)  
 }
 
 
-export {slideInView}
+
 export default buildSlider
 

@@ -75,7 +75,7 @@ const rollParticles = () =>{
 
   let previous = scrollTop
   scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-  for(particle of particles){
+  for(let particle of particles){
     if(particle.dY <= 0.5 || particle.dY >= -0.5){
 
   
@@ -91,7 +91,7 @@ const rollParticles = () =>{
 }
 
 
-window.onresize = resizeCanvas
+window.addEventListener('window:resize', resizeCanvas)
 window.onscroll = rollParticles
 
 
@@ -227,7 +227,7 @@ const clearScreen = () => {
 }
 
 const drawParticles = (array) => {
-  for(particle of array){
+  for(let particle of array){
     particle.draw()
     particle.move()
   }
@@ -245,6 +245,4 @@ window.requestAnimationFrame(canvasLoop)
 
 console.log('Oh looks like we have a detective!🔍')
 console.log('Looking for anything in particular? contact: jake@hellojake.com')
-
-
 
