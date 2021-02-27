@@ -21,24 +21,29 @@ const buildSlider = (id) => {
   let heldDown = false
 
   //previous x position, establishes if the user is swiping right or left
-  let previous = 0;
+  let previous = null;
 
   //the x postition of the slides at the center of the slidewindow in relation to the translation of the x position
   let posX = 0
   //
   let cardWidth = sliderChildren[0].offsetWidth
 
+  let xDown = null;
+
 
 
   const mouseDownListener = (event) => {
 	  event.preventDefault();
     //record inital X position of the mouse
-	  startX = event.clientX
+	 startX = event.clientX ? event.clientX : event.touches[0].clientX
+    console.log('start', startX)
     //mouse is being clicked	
 	  heldDown = true	
   }
 
+
   slider.addEventListener('mousedown', mouseDownListener)
+  slider.addEventListener('touchstart', mouseDownListener)
 
   
   
@@ -48,22 +53,30 @@ const buildSlider = (id) => {
 	  heldDown = false 
     //resets slide to it's center at the center of the slide window
 	  resetPosition(posX)
+    previous = null
   }
 
 document.addEventListener('mouseup', mouseUpListener)
+document.addEventListener('touchend', mouseUpListener)
 
 
 const mouseMoveListener = (event) => {
 	event.preventDefault();
   //the distance traveled since last mouseMove event trigger
-	let distance = event.clientX - previous 
+  let current = event.clientX ? event.clientX : event.touches[0].clientX
+  previous = previous === null ?  startX: previous;
+  console.log('current', current)
+
+  let distance = current - previous 
+  console.log('distance', distance)
   if(heldDown) {
     moveSlide(distance)
   }	
-	previous = event.clientX;
+	previous = current
 }
 
 slider.addEventListener('mousemove', mouseMoveListener)
+slider.addEventListener('touchmove', mouseMoveListener)
 
 const moveSlide = (distance) => {
 
