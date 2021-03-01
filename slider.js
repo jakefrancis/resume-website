@@ -8,8 +8,6 @@ const buildSlider = (id) => {
   
   const sliderChildren = slider.children
 
-
-
   //stores the intial value of a touch event or mouse click
   let startX;
 
@@ -32,7 +30,7 @@ const buildSlider = (id) => {
 
 
   const mouseDownListener = (event) => {
-    event.preventDefault()
+  
     //record inital X position of the mouse
 	 startX = event.clientX ? event.clientX : event.touches[0].clientX
 
@@ -71,7 +69,7 @@ const mouseMoveListener = (event) => {
   let distance = current - previous 
 
   if(heldDown) {
-    moveSlide(distance)
+    window.requestAnimationFrame(() => moveSlide(distance))
   }	
 	previous = current
 }
@@ -91,7 +89,7 @@ const moveSlide = (distance) => {
     let direction = distance > 0 ? 'right': 'left'
     
     //change posX by the distance mouse/touch has moved
-		posX = posX + (distance)		
+		posX = Math.floor(posX + (distance))
   
 		if(direction === 'left'){		
     //if the slide has moved 25% of its width, then change the index of the slide that is inview to the next slide
@@ -137,7 +135,7 @@ const resetPosition = (currentPosition) => {
   */
   
   //spring constant
-	const k = 0.1
+	const k = 0.2
   //equilbrium point
 	const resetPos = (slideInView - 1) * sliderChildren[0].offsetWidth
   //velocity generated
@@ -145,15 +143,17 @@ const resetPosition = (currentPosition) => {
 	
   //var is used in order to recursively call request animation frame
 	var moveToEquilibrium = function() {
-		
+		if(heldDown) return
     //move the slide towards the equilibrium by the velocity generated
 		endPos -= dX
+    
     //recalculate velocity based on the slides new position
 		dX = k * (resetPos + endPos)
     //visually move the slides
 		for(let i = 0; i < sliderChildren.length; i++){
 			let card = sliderChildren[i]
 		card.style.transform = `translateX(${endPos}px)`
+    posX = endPos
 		//if the spring has reached the equilibrium point stop
 		if(endPos < -resetPos + 2 && endPos >  -resetPos - 2){
 			for(let i = 0; i < sliderChildren.length; i++){
@@ -173,8 +173,8 @@ const resetPosition = (currentPosition) => {
 
 //this needs to be extracted at some point
 const centerViewport = () => {
-  console.log('slider')
-  posX = -sliderChildren[0].offsetWidth * (slideInView - 1
+  cardWidth = sliderChildren[0].offsetWidth
+  posX = -cardWidth * (slideInView - 1
 )
   for(let i = 0; i < sliderChildren.length; i++){
     let card = sliderChildren[i]    

@@ -4,7 +4,7 @@
 
 let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-let parCount = 300
+let parCount = 200
 let canvasHeight = window.innerHeight
 let canvasWidth  = window.innerWidth
 let mobile = false
@@ -14,7 +14,7 @@ let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
 
 if(canvasWidth < 450 || canvasHeight < 450){
   parRadius = Math.floor((canvasHeight + canvasWidth) / 250)
-  parCount = 150
+  parCount = 100
   mobile = true
 }
 
