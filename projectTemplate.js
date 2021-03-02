@@ -12,7 +12,7 @@ const projectsData = [
 ]
 */
 
-let currentIndex = 1
+let currentIndex = 0
 
 const buildProjectSection = (projectArray) => {
   let index = 0
@@ -117,7 +117,7 @@ const clearCurrentProject = () => {
 }
 
 
-buildProjectSection(projectsData)
+buildProjectSection(projectsData[0])
 
 buildSlider('viewport')
 
@@ -143,4 +143,3 @@ const prev = (event) => {
 
 leftArrow.addEventListener('click',(prev))
 
-*/
