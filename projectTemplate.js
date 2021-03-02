@@ -1,5 +1,7 @@
 import projectsData from './data/projectData.js'
 
+import buildSlider from './slider.js'
+
 /*
 const projectsData = [
   { title: "Tetris",
@@ -12,84 +14,116 @@ const projectsData = [
 
 let currentIndex = 0
 
-const buildProjectSection = (project) => {
+const buildProjectSection = (projectArray) => {
+  let index = 0
+      projectArray.forEach((project) => {
+      
+      const cardsContainer = document.getElementById('viewport')
+      const wrapper = document.createElement('div')
+        wrapper.className='card-wrapper'
+        wrapper.setAttribute('id', index)
+        index++
+      const card = document.createElement('div')
+      card.className = 'card'
+      card.setAttribute('id', 'card')
 
-      const portfolioContainer = document.getElementById('portfolioContainer')
-      const projectContainer = document.createElement('div')
-      projectContainer.className = 'project row border'
-      projectContainer.setAttribute('id', 'projectContainer')
-
-      const container = document.createElement('div')
-      container.className = 'six columns'
       //create title
-      const title = document.createElement('h3')
-      title.className = 'title color-emphasis'
+      const title = document.createElement('h2')
+      title.className = 'card-title'
       title.textContent = project.title
-      container.appendChild(title)
+      card.appendChild(title)
+
+       //images card
+
+       const imageContainer = document.createElement('div')
+
+       imageContainer.className = 'card-image-wrapper'
+ 
+       const image = document.createElement('img')
+       image.className = 'card-image'
+       image.src = project.image
+
+       imageContainer.appendChild(image)
+ 
+       card.appendChild(imageContainer) 
+
 
       //create description
       const description = document.createElement('p')
-      description.className = 'description'
+      description.className = 'card-description'
       description.textContent = project.description
-      container.appendChild(description)
+      card.appendChild(description)
 
       //tech used
+      const skillContainer = document.createElement('div')
+      skillContainer.className = 'card-code-container'
+
+      const skillWrapper = document.createElement('div')
+      skillWrapper.className = 'card-code-wrapper'
 
       project.technologies.forEach((tech) => {
         const skill = document.createElement('code')
+        skill.className = 'card-code'
         skill.textContent = tech
-        container.appendChild(skill)
+        skillWrapper.appendChild(skill)
       })
 
+      skillContainer.appendChild(skillWrapper)
+
+     
+   
+      const livePWrapper = document.createElement('p')
       //live link
       const liveLink = document.createElement('a')
       liveLink.setAttribute('href', project.live)
       liveLink.innerHTML = 'Live '
-      liveLink.className =''
-      container.appendChild(liveLink)
+      liveLink.className ='card-link-live'
+      skillContainer.appendChild(liveLink)
       //code link
       const codeLink = document.createElement('a')
       codeLink.setAttribute('href', project.code)
-      codeLink.className = ''
+      codeLink.className = 'card-link-code'
       codeLink.innerHTML = 'Source Code '
+  
+
+      
 
       const gitHubLogo = document.createElement('img')
       gitHubLogo.className = 'code-logo'
       gitHubLogo.src = 'images/logos/github.svg'
       codeLink.appendChild(gitHubLogo)
-      container.appendChild(codeLink)
-
-      //images container
-
-      const imageContainer = document.createElement('div')
-
-      imageContainer.className = 'six columns'
-
-      const image = document.createElement('img')
-      image.className = 'value-img'
-      image.src = project.image
-      image.setAttribute('href', liveLink)
-
-      imageContainer.appendChild(image)
-
       
-      projectContainer.appendChild(container)
-      projectContainer.appendChild(imageContainer)
-      portfolioContainer.appendChild(projectContainer)
+       skillContainer.appendChild(codeLink)
+      card.appendChild(skillContainer)
+      wrapper.appendChild(card)
+     
+      cardsContainer.appendChild(wrapper)
     
 
+      })
+        
+
+
+
+
+      
 }
 
 const clearCurrentProject = () => {
-  const portfolioContainer = document.getElementById('portfolioContainer')
-  while(portfolioContainer.firstChild){
-    portfolioContainer.removeChild(portfolioContainer.lastChild)
+  const cardsContainer = document.getElementById('cardsContainer')
+  while(cardsContainer.firstChild){
+    cardsContainer.removeChild(cardsContainer.lastChild)
   }
 }
 
 
-buildProjectSection(projectsData[0])
+buildProjectSection(projectsData)
 
+buildSlider('viewport')
+
+/*
+
+/*
 const rightArrow = document.getElementById('right-arrow')
 
 const next = (event) => {
@@ -109,3 +143,4 @@ const prev = (event) => {
 
 leftArrow.addEventListener('click',(prev))
 
+*/
