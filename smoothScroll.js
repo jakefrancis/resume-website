@@ -1,7 +1,7 @@
 const headerLinks = document.querySelectorAll(".header a")
 
 for (const link of headerLinks){
-  if(link.getAttribute('href')){
+  if(link.getAttribute('href'&& !link.getAttribute('download'))){
     link.addEventListener('click', clickHandler)
   }
 }
