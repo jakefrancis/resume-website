@@ -238,6 +238,7 @@ a{
   top: 50%;
 }
 
+
 .left-arrow{
   left: 0;
 }
@@ -246,7 +247,26 @@ a{
   right: 0
 }
 
+.in-focus{
 
+}
+/*
+.left-focus,.right-focus{
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  z-index: 1
+}
+
+.left-focus{
+  left: 0
+}
+
+.right-focus{
+  right: 0
+}
+
+*/
 /* Larger than mobile */
 @media (min-width: 600px) {
 
