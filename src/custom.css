@@ -25,6 +25,9 @@ body{
 
 }
 
+div {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
 
 .color-emphasis{
   color: var(--emphasis-color)
@@ -243,6 +246,7 @@ a{
   top: 50%;
 }
 
+
 .left-arrow{
   left: 0;
 }
@@ -251,6 +255,23 @@ a{
   right: 0
 }
 
+.in-focus{
+
+}
+.left-focus,.right-focus{
+  position: absolute;
+  top: 50%;
+  width: 50%;
+  z-index: 1
+}
+
+.left-focus{
+  left: 0
+}
+
+.right-focus{
+  right: 0
+}
 
 .cards-container{  
   display: flex;

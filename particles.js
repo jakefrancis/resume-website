@@ -218,7 +218,12 @@ const init = () => {
 }
 
 const clearScreen = () => {
-  ctx.clearRect(0,0,canvasWidth,canvasHeight)
+  ctx.fillStyle = 'white'
+  ctx.fillStyle = 'rgb(133,130,137,1)'
+  ctx.fillStyle = '#153956'
+  
+
+  ctx.fillRect(0,0,canvasWidth,canvasHeight)
 }
 
 const drawParticles = (array) => {
