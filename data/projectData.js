@@ -18,7 +18,7 @@ const projectsData = [
   },
   {
     title: "Paging Alarm",
-    description: `Sends a custom or automated message to an employees pager at a designated time`,
+    description: `Sends a custom message to an employee's pager at a designated time. Yes a pager`,
     live: 'hellojake.com/tetris',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/tetris-rewrite',
