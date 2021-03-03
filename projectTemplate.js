@@ -16,9 +16,11 @@ let currentIndex = 0
 
 const buildProjectSection = (projectArray) => {
   let index = 0
+
+  const cardsContainer = document.getElementById('viewport')
       projectArray.forEach((project) => {
       
-      const cardsContainer = document.getElementById('viewport')
+      
       const wrapper = document.createElement('div')
         wrapper.className='card-wrapper'
         wrapper.setAttribute('id', index)
@@ -100,13 +102,11 @@ const buildProjectSection = (projectArray) => {
       cardsContainer.appendChild(wrapper)
     
 
-      })
+      }) 
         
 
-
-
-
-      
+      const portfolioContainer = document.getElementById('portfolio-container')
+     
 }
 
 const clearCurrentProject = () => {

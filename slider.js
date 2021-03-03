@@ -3,10 +3,38 @@
 
 
 const buildSlider = (id) => {
+
   
   const slider = document.getElementById(String(id))
+
+  const sliderParent = slider.parentNode
+  
   
   const sliderChildren = slider.children
+
+//add svg images below viewport
+  const indicatorWrapper = document.createElement('div')
+  indicatorWrapper.className = 'indicator-wrapper'
+for(let i = 0; i < sliderChildren.length; i++){
+    let pageIndicator = document.createElement('img')
+     pageIndicator.src = 'images/icons/pageIndicator.svg'
+     if(i === 0){
+      pageIndicator.className = 'page-indicator inview'
+      pageIndicator.setAttribute('id', `${i + 1}pi`)
+     }
+     else{
+      pageIndicator.className = 'page-indicator'
+      pageIndicator.setAttribute('id', `${i + 1}pi`)
+     }
+    
+
+     indicatorWrapper.appendChild(pageIndicator)
+     
+}
+  sliderParent.appendChild(indicatorWrapper)
+
+  const indicatorChildren = indicatorWrapper.children
+
 
   //stores the intial value of a touch event or mouse click
   let startX;
@@ -51,6 +79,14 @@ const buildSlider = (id) => {
     //no longer clicking
 	  heldDown = false 
     //resets slide to it's center at the center of the slide window
+    for(let i = 0; i < indicatorChildren.length; i++){
+      if(i+1 === slideInView){
+        indicatorChildren[i].className ='page-indicator inview'
+      }
+      else{
+        indicatorChildren[i].className ='page-indicator'
+      }
+    }
 	  resetPosition(posX)
     previous = null
   }

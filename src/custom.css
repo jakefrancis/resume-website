@@ -357,9 +357,17 @@ a{
   width: auto;
   
 }
+.card-code{
+  display: inline-block;
+  margin: 0.5rem;
+
+}
 .card-link-code{
   align-self: flex-start;
   padding-bottom: 1rem; 
+}
+.card-link-live{
+  margin-top: 1rem;
 }
 
 .card-code-container{
@@ -380,6 +388,22 @@ code{
   border-radius: 4px;
 }
 
+.indicator-wrapper{
+  padding-top: 1rem ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-indicator{
+  height: 2rem;
+  filter: invert(1)
+}
+
+.inview{
+  filter: invert(0)
+}
+
 
 
 
@@ -393,7 +417,7 @@ code{
     display: flex;
     flex-wrap: nowrap;
     overflow: hidden;
-    width: 50%;
+    width: 80%;
     min-height: 80vh;
     touch-action: pan-y
   }
@@ -403,10 +427,10 @@ code{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 25% 40% 35%;
     grid-template-areas:  
-                "title image"
-                "description image"
-                "code image";
-    height: 90%;
+                "title title"
+                "code image"
+                "description description";
+    height: 100%;
     background: var(--dark-bg-color);
     text-align: center;
     cursor: pointer;
