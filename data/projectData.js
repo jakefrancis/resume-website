@@ -17,7 +17,7 @@ const projectsData = [
     demo: 'filepathhere'    
   },
   {
-    title: "Paging Alarm Clock",
+    title: "Paging Alarm",
     description: `Sends a custom or automated message to an employees pager at a designated time`,
     live: 'hellojake.com/tetris',
     technologies: ['Javascript','HTML','CSS'],
