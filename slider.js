@@ -78,15 +78,10 @@ for(let i = 0; i < sliderChildren.length; i++){
     
     //no longer clicking
 	  heldDown = false 
+    highlightIndicator()
+
     //resets slide to it's center at the center of the slide window
-    for(let i = 0; i < indicatorChildren.length; i++){
-      if(i+1 === slideInView){
-        indicatorChildren[i].className ='page-indicator inview'
-      }
-      else{
-        indicatorChildren[i].className ='page-indicator'
-      }
-    }
+    
 	  resetPosition(posX)
     previous = null
   }
@@ -116,6 +111,18 @@ slider.addEventListener('mousemove', mouseMoveListener)
 for(let child of sliderChildren){
     child.firstChild.addEventListener('touchmove', mouseMoveListener)
     child.firstChild.addEventListener('touchstart', mouseDownListener)
+    
+}
+
+const highlightIndicator = () => {
+  for(let i = 0; i < indicatorChildren.length; i++){
+    if(i+1 === slideInView){
+      indicatorChildren[i].className ='page-indicator inview'
+    }
+    else{
+      indicatorChildren[i].className ='page-indicator'
+    }
+  }
 }
 
 const moveSlide = (distance) => {
