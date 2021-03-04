@@ -40,9 +40,9 @@
         <a class='menu-link'>|</a>
         <a href='#portfolio'' class='menu-link'>Portfolio</a>
         <a class='menu-link'>|</a>
-        <a class='menu-link'>Contact</a>
+        <a href='#contact' class='menu-link'>Contact</a>
         <a class='menu-link'>|</a>
-        <a href='src/resume.txt' class='menu-link' download='resume.txt'>Resume</a>
+        <a id='resume' href='src/resume.txt' class='menu-link' download='resume.txt'>Resume</a>
       </div>        
     </div>
  
@@ -112,12 +112,76 @@
         </div>
        
     </div>
-    <div id='contact' class='section contact'>
-      <div class='container'>
-        <h1 class='title  color-emphasis'>Contact</h1>
-        <a  class='link-logo' href="https://www.github.com/jakefrancis/"><img class= 'link-logo' src='images/logos/github.svg' alt='Github Logo'></a>
+  </div>
+  <footer id='contact' class='contact'>       
+    <h1 class='contact-title color-emphasis'>Contact</h1>
+    <div class='contact-wrapper'>
+      <div id='socials' class='socials'>
+        <a  class='link-logo' href="https://www.github.com/jakefrancis/">
+          <figure>
+            <img class= 'link-logo' src='images/logos/github.svg' alt='Github Logo'>
+            <figcaption>Github</figcaption>
+          </figure>         
+        </a>
+        <a  class='link-logo' href="https://codepen.io/jakefrancis/">
+          <figure>
+            <img class= 'link-logo' src='images/logos/codepen.svg' alt='Codepen Logo'>
+            <figcaption>Codepen</figcaption>
+          </figure>         
+        </a>
+        <a  class='link-logo' href="href='src/resume.txt'">
+          <figure>
+            <img class= 'link-logo' src='images/icons/document-text-outline.svg' alt='Document with text'>
+            <figcaption>Resume</figcaption>
+          </figure>         
+        </a>
+        <div class='email-display'></div>   
       </div>
+      <div id="form-wrapper" class='form-wrapper'>
+        <form
+          name="ContactForm"
+          method="POST"
+          data-netlify="true"
+          data-netlify-recaptcha="true"
+          id="contact-form"
+          class="contact-form"
+        >
+          <input
+            type="text"
+            name="name"
+            id="contact-form-name"
+            aria-labelledby="contact-form-name-label"
+            class="form-input name-input"
+            placeholder="Name"
+          />
+  
+          <input
+            type="email"
+            name="email"
+            id="contact-form-email"
+            aria-labelledby="contact-form-email-label"
+            class="form-input email-input"
+            placeholder="E-mail"
+          />
+          <textarea
+            name="message"
+            id="contact-form-message"
+            aria-labelledby="contact-form-message-label"
+            class="form-input message-textarea"
+            rows="7"
+            placeholder="Send me a message..."
+          ></textarea>
+         
+          <button type="submit" class="button form-button">Send</button>
+          <div data-netlify-recaptcha="true" class="form-captcha"></div>
+         <!-- <div name="captcha" id="captcha" class="form-captcha">
+            I'm not a robot
+          </div>
+        </form>
+      </div>   -->
     </div>
+   
+  </footer>
     
   </div>
   
