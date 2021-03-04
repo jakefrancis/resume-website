@@ -1,7 +1,8 @@
 const headerLinks = document.querySelectorAll(".header a")
 
 for (const link of headerLinks){
-  if(link.getAttribute('href')){
+  let href = link.getAttribute('href')
+  if(href && href !== 'src/resume.txt'){
     link.addEventListener('click', clickHandler)
   }
 }
