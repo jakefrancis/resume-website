@@ -445,6 +445,7 @@ code{
   }
 
   .card{
+    font-size: 1.6rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 25% 40% 35%;
