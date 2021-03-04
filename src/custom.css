@@ -224,7 +224,6 @@ p{
 }
 .header{
   text-align: center;
-  border-bottom: 0.5rem solid var(--dark-bg-color);
   padding-bottom: 1rem;
   vertical-align: center;
 }
@@ -596,7 +595,7 @@ figcaption{
   }
   .about-me-grid{
     display: grid;
-    margin: 0 auto;
+    margin: 2rem auto 5rem auto;
     max-height: 100%;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
