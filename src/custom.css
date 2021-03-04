@@ -426,6 +426,83 @@ code{
   filter: invert(0)
 }
 
+.contact{
+  display: flex;
+  justify-content: space-evenly;
+  border-top: solid var(--dark-bg-color) 0.5rem;
+  position: relative;
+  margin-top: 10rem;
+  bottom: 0px;
+}
+
+.form-wrapper {
+
+}
+
+.contact-form {
+  height: 100%;
+  max-width: 470px;
+  padding-top: 5rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 35% 65%;
+  grid-template-rows: 25% 35% 40%;
+  grid-template-areas:
+    "name email"
+    "message message"
+    "submit captcha";
+  grid-gap: 0.5rem;
+}
+
+.form-input {
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  grid-area: name;
+}
+.form-input:focus {
+  outline-width: 0;
+}
+
+.name-input {
+  grid-area: name;
+}
+.email-input {
+  grid-area: email;
+}
+
+.message-textarea {
+  resize: none;
+  grid-area: message;
+}
+
+.form-button {
+  display: block;
+  grid-area: submit;
+}
+
+.form-captcha {
+  text-align: center;
+  grid-area: captcha;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+
+  color: var(--dark-bg-color);
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--dark-bg-color);
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--dark-bg-color);
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--dark-bg-color);
+}
+
 
 
 
