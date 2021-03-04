@@ -26,7 +26,11 @@ A parent container element's id is fed into a `buildSlider` function and all chi
 Page indicators are automatically added below the parent container. 
 
 ```html
-<div id='viewport'></div>
+<div id='viewport'>
+  <img class='slide'>
+  <img class='slide'>
+  <img class='slide'>
+</div>
 <script src='slider.js'></script?>
 ```
 ```javascript
