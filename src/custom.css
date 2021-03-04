@@ -137,6 +137,7 @@ div {
 }
 
 .section{
+  height: 80vh;
   padding-top: 2rem;
   padding-bottom: 10rem;
 }
@@ -347,7 +348,7 @@ a{
 
 .card-image{
   box-sizing: border-box;
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   align-self: center;
   padding: 2rem;

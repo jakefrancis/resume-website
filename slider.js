@@ -79,9 +79,7 @@ for(let i = 0; i < sliderChildren.length; i++){
     //no longer clicking
 	  heldDown = false 
     highlightIndicator()
-
-    //resets slide to it's center at the center of the slide window
-    
+    //resets slide to it's center at the center of the slide window    
 	  resetPosition(posX)
     previous = null
   }
