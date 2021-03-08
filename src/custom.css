@@ -120,6 +120,10 @@ div {
   grid-row-start: 3;
   grid-row-end: 4;
 }
+
+.am-skills-title{
+  text-align: center;
+}
 .border{
   border: var(--dark-bg-color) solid 0.5rem;
   border-radius: 2rem 0.5rem 2rem 0.5rem;
