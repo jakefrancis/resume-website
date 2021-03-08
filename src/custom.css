@@ -430,7 +430,6 @@ code{
 .contact{
  height: 60vh;
   color: var(--bg-color);
-  border-top: solid var(--dark-bg-color) 0.5rem;
   margin-top: 10rem;
 }
 
