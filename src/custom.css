@@ -564,7 +564,6 @@ figcaption{
     flex-direction: row;
     justify-content: space-evenly;
     position: relative;
-    margin-top: 10rem;
     bottom: 0px;
   }
 
