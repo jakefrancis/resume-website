@@ -10,7 +10,7 @@ I originally was going to build it with the React frame work, but thought it was
 
 Written in vanilla `javascript` the background consists of artistic representations of the [Bohr Model](https://en.wikipedia.org/wiki/Bohr_model) of the atom.
 
-When the site gets scrolled in either direction a force is applied to the particle's velocity in the direction of the scroll event.
+When the site gets scrolled in either direction a force is applied to every particle's velocity, in the direction of the scroll event.
 Additionally, when the screen is resized they are either regenerated if they were lost off screen or they rapidly expand outward from the center of the window to fill the screen.
 A friction force is applied to any particle that is traveling faster than it's randomly generated  maximum velocity.
 
