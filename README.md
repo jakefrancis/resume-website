@@ -18,7 +18,7 @@ A friction force is applied to any particle that is traveling faster than it's r
 
 ### Slider
 
-A simple mouse and touch based slider built with `javascript`. 
+A mouse and touch based slider built with `javascript`. 
 
 ##### Usage
 
