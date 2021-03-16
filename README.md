@@ -1,6 +1,6 @@
 # My Personal Portfolio Website
 
-This site is built with HTML CSS and Vanilla, Javascript.
+This site is built with HTML CSS and Javascript.
 
 I originally was going to build it with the React frame work, but thought it was overkill for a small static website.
 
