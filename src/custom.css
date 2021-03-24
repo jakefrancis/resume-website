@@ -120,6 +120,10 @@ div {
   grid-row-start: 3;
   grid-row-end: 4;
 }
+
+.am-skills-title{
+  text-align: center;
+}
 .border{
   border: var(--dark-bg-color) solid 0.5rem;
   border-radius: 2rem 0.5rem 2rem 0.5rem;
@@ -418,6 +422,7 @@ code{
 }
 
 .page-indicator{
+  cursor: pointer;
   height: 2rem;
   filter: invert(1)
 }
@@ -429,7 +434,6 @@ code{
 .contact{
  height: 60vh;
   color: var(--bg-color);
-  border-top: solid var(--dark-bg-color) 0.5rem;
   margin-top: 10rem;
 }
 
@@ -439,6 +443,7 @@ code{
 }
 
 .contact-wrapper{
+  display: flex;
   max-width: 940px;
   margin: 0 auto;
   flex-direction: column-reverse;
@@ -501,6 +506,7 @@ code{
 }
 
 .socials{
+  padding-top: 5rem;
   text-align: center;
   display: flex; 
   justify-content: center; 
@@ -544,6 +550,7 @@ figcaption{
   }
 
   .socials{
+    padding-top: 0rem;
     max-width: 50%;
     flex-wrap: nowrap;
     justify-content: space-evenly;
@@ -561,7 +568,6 @@ figcaption{
     flex-direction: row;
     justify-content: space-evenly;
     position: relative;
-    margin-top: 10rem;
     bottom: 0px;
   }
 

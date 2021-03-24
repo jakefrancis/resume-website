@@ -27,6 +27,12 @@ for(let i = 0; i < sliderChildren.length; i++){
       pageIndicator.setAttribute('id', `${i + 1}pi`)
      }
     
+     pageIndicator.onclick = () => {
+        const index = i + 1
+        slideInView = index
+        highlightIndicator()
+        resetPosition(posX)
+     }
 
      indicatorWrapper.appendChild(pageIndicator)
      
@@ -69,9 +75,7 @@ for(let i = 0; i < sliderChildren.length; i++){
 
 
 
-
   slider.addEventListener('mousedown', mouseDownListener)
-
   
   
   const mouseUpListener = (event) => {

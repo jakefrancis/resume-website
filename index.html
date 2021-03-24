@@ -55,10 +55,11 @@
       </div>
     </div> 
     <div id='about-me' class='container about-me'>
+ 
       <div class='about-me-grid'>        
-  
+            
             <div class='am-grid-about-me'=>
-              <h1 class='title color-emphasis'>About Me</h1>
+              <h1 class='title color-emphasis'>Who am I?</h1>
               <p class=''>I'm a self-taught developer with a passion for code.</p>
               <p class=''>Currently I work as a Senior Chemistry Technician at D.C. Cook Nuclear power station. ☢️<br>  
                 My passions include, programming, art, photography, and science.
@@ -82,7 +83,7 @@
               </div>  
               
               <div class='am-grid-skills'>
-                <h3 class ='title'>Stuff I love to use!</h3>
+                <h3 class ='am-skills-title'>Tech I love to use:</h3>
                 <div class='logosContainer'>
                   <img class= 'img-logo' src='images/logos/js.svg' alt='JavaScript Logo'>
                   <img class= 'img-logo' src='images/logos/react.svg' alt='React Logo'>
@@ -114,7 +115,7 @@
     </div>
   </div>
   <footer id='contact' class='contact'>       
-    <h1 class='contact-title color-emphasis'>Say Hello</h1>
+    <h1 class='contact-title color-emphasis underline'>Say Hello</h1>
     <div class='contact-wrapper'>
       <div id='socials' class='socials'>
         <a  class='link-logo' href="https://www.github.com/jakefrancis/">
@@ -151,6 +152,7 @@
             id="contact-form-name"
             class="form-input name-input"
             placeholder="Name"
+            required = 'true'
           />
   
           <input
@@ -159,13 +161,15 @@
             id="contact-form-email"
             class="form-input email-input"
             placeholder="E-mail"
+            required = 'true'
           />
           <textarea
             name="message"
             id="contact-form-message"
             class="form-input message-textarea"
             rows="7"
-            placeholder="Send me a message..."
+            placeholder='Send me a message...'
+            required = 'true'
           ></textarea>
          
           <button type="submit" class="button form-button">Send</button>
