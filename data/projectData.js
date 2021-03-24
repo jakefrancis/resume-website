@@ -1,11 +1,11 @@
 const projectsData = [
   { title: "Tetris",
     description: "The classic falling block game written entirely in JS.",
-    live: 'src/tetris/tetris.html',
-    technologies: ['Javascript','HTML','CSS','Git','Linux', 'long'],
+    live: '/tetris/',
+    technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/tetris-rewrite',
     image: 'images/tetris.png',
-    demo: 'src/tetris/tetris.html'
+    demo: '/tetris/'
   },
   {
     title: "Snake",
@@ -13,7 +13,7 @@ const projectsData = [
     live: 'hellojake.com/snake',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/multiplayer-snake',
-    image: 'images/snake.png',
+    image: 'images/snake.jpg',
     demo: 'filepathhere'    
   },
   {
