@@ -59,12 +59,10 @@ for(let i = 0; i < sliderChildren.length; i++){
   //
   let cardWidth = sliderChildren[0].offsetWidth
 
-  let xDown = null;
 
 
 
-  const mouseDownListener = (event) => {
-  
+  const mouseDownListener = (event) => {  
     //record inital X position of the mouse
 	 startX = event.clientX ? event.clientX : event.touches[0].clientX
 
@@ -89,7 +87,7 @@ for(let i = 0; i < sliderChildren.length; i++){
   }
 
 document.addEventListener('mouseup', mouseUpListener)
-slider.addEventListener('touchend', mouseUpListener)
+slider.addEventListener('touchend', handleTouchEnd)
 
 
 const mouseMoveListener = (event) => {
@@ -97,7 +95,6 @@ const mouseMoveListener = (event) => {
   //the distance traveled since last mouseMove event trigger
   let current = event.clientX ? event.clientX : event.touches[0].clientX
   previous = previous === null ?  startX: previous;
-
 
   let distance = current - previous 
 
@@ -107,13 +104,85 @@ const mouseMoveListener = (event) => {
 	previous = current
 }
 
+let xDown = null;
+let yDown = null;
+let direction = null
+let dirEnd = false
+
+function handleTouchEnd(event){
+  xDown = null
+  yDown = null
+  direction = null
+  dirEnd = false
+  heldDown = false 
+  highlightIndicator()
+  //resets slide to it's center at the center of the slide window    
+  resetPosition(posX)
+  previous = null
+}
+
+function getTouches(event) {
+  return event.touches;
+}
+
+function handleTouchStart(event) {
+  const firstTouch = getTouches(event)[0];
+  heldDown = true
+  xDown = firstTouch.clientX;
+  yDown = firstTouch.clientY;
+  startX = xDown
+}
+
+function handleTouchMove(event) {
+
+
+
+    if (!xDown || !yDown) {
+      return;
+    }
+  
+    let xUp = event.touches[0].clientX;
+    let yUp = event.touches[0].clientY;
+  
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+  
+    if(!dirEnd){
+      direction = Math.abs(xDiff) > Math.abs(yDiff) ? 'horizontal' : 'vertical'
+    }
+    console.log(direction)
+    if(direction === 'horizontal'){
+      if (event.cancelable) {
+        event.preventDefault();
+     }
+      
+      //the distance traveled since last mouseMove event trigger
+      let current = event.touches[0].clientX
+      previous = previous === null ?  startX: previous;
+      xDown = xUp
+    
+      let distance = current - previous 
+    
+      if(heldDown) {
+        window.requestAnimationFrame(() => moveSlide(distance))
+      }	
+      previous = current
+      dirEnd = true
+    } 
+  
+  // reset values //
+  //xDown = xUp;
+  //yDown = yDiff;
+}
+
+
+
 slider.addEventListener('mousemove', mouseMoveListener)
 //slider.addEventListener('touchmove', mouseMoveListener)
 
 for(let child of sliderChildren){
-    child.firstChild.addEventListener('touchmove', mouseMoveListener)
-    child.firstChild.addEventListener('touchstart', mouseDownListener)
-    
+    child.firstChild.addEventListener('touchmove', handleTouchMove)
+    child.firstChild.addEventListener('touchstart', handleTouchStart)    
 }
 
 const highlightIndicator = () => {
@@ -128,7 +197,6 @@ const highlightIndicator = () => {
 }
 
 const moveSlide = (distance) => {
-
   
     //direction the mouse was moved
     let direction = distance > 0 ? 'right': 'left'
