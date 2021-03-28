@@ -25,6 +25,15 @@ const projectsData = [
     image: 'images/snake.jpg',
     demo: 'filepathhere'    
   },
+  {
+    title: "Slider",
+    description: "A physics based slider built with javascript. You're using it right now!",
+    live: 'https://jake-slider.netlify.app',
+    technologies: ['Javascript','HTML','CSS'],
+    code: 'https://github.com/jakefrancis/slider',
+    image: 'images/slider.png',
+    demo: 'filepathhere'    
+  },
  
 ]
 
