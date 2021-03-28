@@ -21,7 +21,7 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="src/custom.css"
+  <link rel="stylesheet" href="src/custom.css">
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -34,89 +34,145 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   
+    <div id='top' class='header'>        
+      <div class='container'>               
+        <a href='#about-me' class='menu-link'>About Me</a>
+        <a class='menu-link'>|</a>
+        <a href='#portfolio'' class='menu-link'>Portfolio</a>
+        <a class='menu-link'>|</a>
+        <a href='#contact' class='menu-link'>Contact</a>
+        <a class='menu-link'>|</a>
+        <a id='resume' href='src/JakeFrancisResume.pdf' class='menu-link' download=>Resume</a>
+      </div>        
+    </div>
  
- 
-    <div class='section header'>
+    <div class='section splash-screen'>
       <div class="container">  
         <div class='greeting'>
-          <h1 class='splash radial fade-in'><strong>Hello<span class='color-emphasis fade-name'> I'm Jake</span></strong></h1>
+          <h1 class='splash  fade-in'><strong>Hello<span class='color-emphasis fade-name'> I'm Jake</span></strong></h1>
+          <h1 class='splash  fade-career'><strong>I'm a <span class='color-emphasis fade-career-name'> Web Developer</span></strong></h1>
         </div>
       </div>
     </div> 
-    <div class='section about-me'>
-      <div class='container'>
-        
-          <div class='row'>
-            <div class='six columns radial'>
-              <h1 class='title radial'>About Me</h1>
-              <p class='radial'>I'm a self-taught developer with a passion for code.</p>
-              <p class='radial'>Currently I work as a Senior Chemistry Technician at D.C. Cook Nuclear power station. ☢️<br>  
+    <div id='about-me' class='container about-me'>
+ 
+      <div class='about-me-grid'>        
+            
+            <div class='am-grid-about-me'=>
+              <h1 class='title color-emphasis'>Who am I?</h1>
+              <p class=''>I'm a self-taught developer with a passion for code.</p>
+              <p class=''>Currently I work as a Senior Chemistry Technician at D.C. Cook Nuclear power station. ☢️<br>  
                 My passions include, programming, art, photography, and science.
               </p>
-              <p class='radial'>
+              <p class=''>
                 I hold a B.S. in Chemistry from Doane University. 
-                (Although I took almost as many Art Courses as Chemistry courses).
+                (Although I took almost as many Art courses as Chemistry courses).
               </p>
               <p>
-                I firmly believe education doesn't stop after the classroom, and consider myself to be life a long learner.
-              </p>
-              
-            <p class='radial'>
-             
+                I firmly believe education doesn't stop after the classroom, and consider myself to be a life long learner.
+              </p>              
+            <p class=''>             
               I have an unquenchable thirst for new information. 
               Unlike anything else I have studied, programming has given me the perfect union of creativity, and analytical problem sovling.
             </p>
-            <p class='radial'>I simply can't get enough.</p>           
+            <p class=''>I simply can't get enough.</p>
           </div>
-          <div class='six columns'>
-            <img class="value-img" src='images/boom-headshot-desktop.png' alt='A headshot of Jake Francis'>
-          </div>
+
+              <div class="am-grid-photo">
+                <img class='portrait' src='images/profile.jpg'>
+              </div>  
+              
+              <div class='am-grid-skills'>
+                <h3 class ='am-skills-title'>Tech I love to use:</h3>
+                <div class='logosContainer'>
+                  <img class= 'img-logo' src='images/logos/js.svg' alt='JavaScript Logo'>
+                  <img class= 'img-logo' src='images/logos/react.svg' alt='React Logo'>
+                  <img class= 'img-logo' src='images/logos/html5.svg' alt='HTML5 Logo'>
+                  <img class= 'img-logo' src='images/logos/css.svg' alt='CSS Logo'>       
+                  <img class= 'img-logo' src='images/logos/git.svg' alt='Git Logo'>
+                  <img class= 'img-logo' src='images/logos/github.svg' alt='Github Logo'>
+                  <img class= 'img-logo' src='images/logos/npm.svg' alt='NPM Logo'>
+                  <img class= 'img-logo' src='images/logos/linux.svg' alt='Linux Logo'>
+                  <img class= 'img-logo' src='images/logos/ps.svg' alt='Photoshop Logo'>
+                </div>
+              </div>       
         </div>
-      </div>
     </div>
-    <div class='section skills'>
-      <div class="container">       
-        <div class='row'>
-          <div class= 'six columns radial'>
-            <h1 class='title radial'>Skills</h1>
-            <h5 class ='radial'>Some of the stuff I love to use:</h5>
-            <ul class='unordered-list'>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Git</li>
-              <li>Github</li>
-              <li>React</li>
-              <li>NPM</li>
-              <li>Linux</li>
-              <li>Adobe Photoshop</li>
-            </ul>             
-          </div>
-          <div class='six columns'>
-          <div class='logosContainer'>
-            <img class= 'img-logo' src='images/logos/html5.svg' alt='HTML5 Logo'>
-            <img class= 'img-logo' src='images/logos/css.svg' alt='CSS Logo'>
-            <img class= 'img-logo' src='images/logos/js.svg' alt='JavaScript Logo'>
-            <img class= 'img-logo' src='images/logos/git.svg' alt='Git Logo'>
-            <img class= 'img-logo' src='images/logos/github.svg' alt='Github Logo'>
-            <img class= 'img-logo' src='images/logos/react.svg' alt='React Logo'>
-            <img class= 'img-logo' src='images/logos/npm.svg' alt='NPM Logo'>
-            <img class= 'img-logo' src='images/logos/linux.svg' alt='Linux Logo'>
-            <img class= 'img-logo' src='images/logos/ps.svg' alt='Photoshop Logo'>
-          </div>
-        </div>
-        </div>         
-      </div>
      </div>  
       
-    <div class='section portfolio'>
-        <div class = 'container' id = 'portfolioContainer'>
+    <div id='portfolio' class='section portfolio'>
+      <div class='container' id ='portfolio-container'>
+      
+        <h1 class='title  color-emphasis'>Portfolio</h1>  
+        <div class ='viewport' id='viewport'>        
 
         </div>
+       
     </div>
-    <div class='section contact'>
-
+  </div>
+  <footer id='contact' class='contact'>       
+    <h1 class='contact-title color-emphasis underline'>Say Hello</h1>
+    <div class='contact-wrapper'>
+      <div id='socials' class='socials'>
+        <a  class='link-logo' href="https://www.github.com/jakefrancis/">
+          <figure>
+            <img class= 'link-logo' src='images/logos/github.svg' alt='Github Logo'>
+            <figcaption>Github</figcaption>
+          </figure>         
+        </a>
+        <a  class='link-logo' href="https://codepen.io/jakefrancis/">
+          <figure>
+            <img class= 'link-logo' src='images/logos/codepen.svg' alt='Codepen Logo'>
+            <figcaption>Codepen</figcaption>
+          </figure>         
+        </a>
+        <a  class='link-logo' href="src/JakeFrancisResume.pdf" download>
+          <figure>
+            <img class= 'link-logo' src='images/icons/document-text-outline.svg' alt='Document with text'>
+            <figcaption>Resume</figcaption>
+          </figure>         
+        </a>
+        <div class='email-display'></div>   
+      </div>
+      <div id="form-wrapper" class='form-wrapper'>
+        <form
+          name="ContactForm"
+          method="POST"
+          data-netlify="true"
+          id="contact-form"
+          class="contact-form"
+        >
+          <input
+            type="text"
+            name="name"
+            id="contact-form-name"
+            class="form-input name-input"
+            placeholder="Name"
+            required = 'true'
+          />
+  
+          <input
+            type="email"
+            name="email"
+            id="contact-form-email"
+            class="form-input email-input"
+            placeholder="E-mail"
+            required = 'true'
+          />
+          <textarea
+            name="message"
+            id="contact-form-message"
+            class="form-input message-textarea"
+            rows="7"
+            placeholder='Send me a message...'
+            required = 'true'
+          ></textarea>
+         
+          <button type="submit" class="button form-button">Send</button>
+      </form>
     </div>
+   
+  </footer>
     
   </div>
   
@@ -124,7 +180,11 @@
 
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
 </body>
+<script src='resizeHandler.js'></script>
 <script type='module' src='projectTemplate.js'></script>
-<script src='particles.js'></script>
+<script type='module' src='particles.js'></script>
+
+<script src='smoothScroll.js'></script>
 </html>

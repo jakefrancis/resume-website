@@ -4,7 +4,7 @@
 
 let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-let parCount = 300
+let parCount = 200
 let canvasHeight = window.innerHeight
 let canvasWidth  = window.innerWidth
 let mobile = false
@@ -14,7 +14,7 @@ let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
 
 if(canvasWidth < 450 || canvasHeight < 450){
   parRadius = Math.floor((canvasHeight + canvasWidth) / 250)
-  parCount = 150
+  parCount = 100
   mobile = true
 }
 
@@ -75,7 +75,7 @@ const rollParticles = () =>{
 
   let previous = scrollTop
   scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-  for(particle of particles){
+  for(let particle of particles){
     if(particle.dY <= 0.5 || particle.dY >= -0.5){
 
   
@@ -91,7 +91,7 @@ const rollParticles = () =>{
 }
 
 
-window.onresize = resizeCanvas
+window.addEventListener('window:resize', resizeCanvas)
 window.onscroll = rollParticles
 
 
@@ -113,20 +113,25 @@ ctx.scale(dpr, dpr)
 let particles = []
 
 class Particle {
-  constructor(x,y,dX,dY){
+  constructor(x,y,dX,dY,radius){
     this.x = x
     this.y = y
     this.dX = dX
     this.dY = dY
+    
+    this.radius = parRadius
+    this.electronRadius =  this.radius / 5    
     this.alpha = 0
     this.topSpeed = 0.6 - (Math.random() / 3)
+    this.angle = randomFromRange(0,360)
+    this.rotation = randomFromRange(2,4) === 2 ? Math.random() * 10 : -(Math.random() * 10)
   }
   move(){
     //verify if out of bounds
-    this.dX = (this.dX + this.x) < 0 + parRadius|| (this.dX + this.x) > canvasWidth - parRadius
+    this.dX = (this.dX + this.x) < 0 + this.radius|| (this.dX + this.x) > canvasWidth - this.radius
       ? -this.dX
       : this.dX
-    this.dY = (this.dY + this.y) < 0  + parRadius || (this.dY + this.y) > canvasHeight - parRadius
+    this.dY = (this.dY + this.y) < 0  + this.radius || (this.dY + this.y) > canvasHeight - this.radius
       ? -this.dY 
       : this.dY
     //move particle
@@ -141,9 +146,28 @@ class Particle {
       this.y += this.dY
   
   }
+
+  rotate(){
+    let radius = this.radius
+    let theta = this.angle * (Math.PI/180)
+    let cs = Math.cos(theta)
+    let sn = Math.sin(theta)
+    let px = (radius * cs) - (radius * sn) + this.x    
+    let py = (radius * sn) + (radius * cs) + this.y
+    let a = this.x - px < 0 ? px - this.x: this.x - px
+    let b = this.y - py < 0 ? py - this.y: this.y - py
+    let d = Math.sqrt((a * a) + (b * b))
+    return {
+     px,py,d
+    }
+  }
+
   draw(){
+    let rotation = this.rotate()
     ctx.beginPath()
-    ctx.arc(this.x,this.y,parRadius, 0, 2 * Math.PI, false)
+
+    //outer
+    ctx.arc(this.x,this.y,this.electronRadius * 2, 0, 2 * Math.PI, false)
     ctx.lineWidth = 1
     if(this.alpha !== 100){
       this.alpha += randomFromRange(0,2)
@@ -151,8 +175,27 @@ class Particle {
         this.alpha = 100
       }
     }
+    ctx.fillStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
+    ctx.fillStyle = '#0d5d87'
+    ctx.fill()
+    ctx.closePath()
+
+
+    ctx.beginPath()
+    ctx.arc(rotation.px, rotation.py,this.electronRadius, 0, 2 * Math.PI, false)
     ctx.strokeStyle = `rgb(0, 250, 204, ${this.alpha / 100})`
+    ctx.strokeStyle = '#0d5d87'
+    ctx.fill()
     ctx.stroke()
+    ctx.closePath()
+    ctx.beginPath()
+    ctx.arc(this.x,this.y, rotation.d, 0, 2 * Math.PI, false)
+    ctx.stroke()
+    ctx.closePath()
+    this.angle += this.rotation
+    if(this.angle > 360){
+      this.angle = 0
+    }
   }
 }
 
@@ -175,14 +218,11 @@ const init = () => {
 }
 
 const clearScreen = () => {
-  //ctx.fillStyle = 'white'
-  ctx.fillStyle = 'rgb(133,130,137,1)'
-
-  ctx.fillRect(0,0,canvasWidth,canvasHeight)
+  ctx.clearRect(0,0,canvasWidth,canvasHeight)
 }
 
 const drawParticles = (array) => {
-  for(particle of array){
+  for(let particle of array){
     particle.draw()
     particle.move()
   }
@@ -200,6 +240,4 @@ window.requestAnimationFrame(canvasLoop)
 
 console.log('Oh looks like we have a detective!🔍')
 console.log('Looking for anything in particular? contact: jake@hellojake.com')
-
-
 
