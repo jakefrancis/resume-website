@@ -417,8 +417,8 @@ code{
 }
 
 .indicator-wrapper{
-  padding-top: 1rem ;
   display: flex;
+  padding-top: 1rem ;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
