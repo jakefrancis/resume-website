@@ -88,14 +88,14 @@ div {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
-  border-left: solid var(--dark-bg-color) 1rem;
-  border-top: solid var(--dark-bg-color) 1rem;
+  /*border-left: solid var(--dark-bg-color) 1rem;
+  border-top: solid var(--dark-bg-color) 1rem;*/
 }
 
 .about-me-grid > div{
   padding: 0.5rem;
-  border-bottom: solid var(--dark-bg-color) 1rem;
-  border-right: solid var(--dark-bg-color) 1rem;
+  /*border-bottom: solid var(--dark-bg-color) 1rem;
+  border-right: solid var(--dark-bg-color) 1rem; */
 }
 
 .am-grid-about-me{
@@ -104,6 +104,7 @@ div {
   grid-column-end: 2;
   grid-row-start: 2;
   grid-row-end: 3;
+  border: solid var(--dark-bg-color) 0.5rem;
 }
 .am-grid-photo{
   display: flex;
@@ -207,6 +208,7 @@ canvas{
   left:0;
   top: 0;
   z-index:-1;
+  overflow: hidden;
 }
 p{
   font-size: 1.8rem
@@ -415,10 +417,11 @@ code{
 }
 
 .indicator-wrapper{
-  padding-top: 1rem ;
   display: flex;
+  padding-top: 1rem ;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .page-indicator{
@@ -452,6 +455,7 @@ code{
 }
 
 .form-wrapper {
+  width: 90%;
   align-self: center;
   justify-self: center;
   margin-top: 5rem;
@@ -507,6 +511,7 @@ code{
 
 .socials{
   padding-top: 5rem;
+  margin-bottom: 10rem;
   text-align: center;
   display: flex; 
   justify-content: center; 
@@ -543,7 +548,15 @@ figcaption{
 
 /* Larger than mobile */
 @media (min-width: 600px) {
+  a{
+    font-size: 2rem;
+  }
 
+  .card-description{
+    font-size: 2rem;
+    width: 80%;
+    margin: 0 auto;
+  }
   .header{
     text-align: right;
     padding: 1rem;
@@ -551,6 +564,7 @@ figcaption{
 
   .socials{
     padding-top: 0rem;
+    margin-bottom: 0rem;
     max-width: 50%;
     flex-wrap: nowrap;
     justify-content: space-evenly;
@@ -558,6 +572,7 @@ figcaption{
   }
 
   .form-wrapper {
+    width: 100%;
     align-self: center;
     justify-self: center;
     margin-top: 5rem;
@@ -566,10 +581,18 @@ figcaption{
   .contact-wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: relative;
     bottom: 0px;
   }
+
+
+.contact-form {
+
+  margin: 0 0 0 auto;
+  height: 100%;
+  width: 80%;
+}
 
   .viewport{
     box-sizing: border-box;
@@ -600,12 +623,23 @@ figcaption{
   .greeting{
     padding: 30% 0 50% 0;
   }
+
+
+  
+  .about-me-grid > div{
+    padding: 0.5rem;
+    border-bottom: solid var(--dark-bg-color) 1rem;
+    border-right: solid var(--dark-bg-color) 1rem;
+  }
+
   .about-me-grid{
     display: grid;
     margin: 2rem auto 5rem auto;
     max-height: 100%;
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
+    border-left: solid var(--dark-bg-color) 1rem;
+    border-top: solid var(--dark-bg-color) 1rem;
   }
   
   .am-grid-about-me{
@@ -613,6 +647,7 @@ figcaption{
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 3;
+    border: none;
   }
   .am-grid-photo{
     grid-column-start: 2;
