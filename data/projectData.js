@@ -1,7 +1,7 @@
 const projectsData = [
   { title: "Tetris",
     description: "The classic falling block game written entirely in JS.",
-    live: '/tetris/',
+    live: 'https://jake-tetris.netlify.app',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/tetris-rewrite',
     image: 'images/tetris.png',

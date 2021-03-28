@@ -207,6 +207,7 @@ canvas{
   left:0;
   top: 0;
   z-index:-1;
+  overflow: hidden;
 }
 p{
   font-size: 1.8rem
@@ -544,7 +545,15 @@ figcaption{
 
 /* Larger than mobile */
 @media (min-width: 600px) {
+  a{
+    font-size: 2rem;
+  }
 
+  .card-description{
+    font-size: 2rem;
+    width: 80%;
+    margin: 0 auto;
+  }
   .header{
     text-align: right;
     padding: 1rem;
