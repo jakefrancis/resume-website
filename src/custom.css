@@ -572,6 +572,7 @@ figcaption{
   }
 
   .form-wrapper {
+    width: 100%;
     align-self: center;
     justify-self: center;
     margin-top: 5rem;
@@ -580,10 +581,18 @@ figcaption{
   .contact-wrapper{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: relative;
     bottom: 0px;
   }
+
+
+.contact-form {
+
+  margin: 0 0 0 auto;
+  height: 100%;
+  width: 80%;
+}
 
   .viewport{
     box-sizing: border-box;
