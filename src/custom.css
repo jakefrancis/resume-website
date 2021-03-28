@@ -455,6 +455,7 @@ code{
 }
 
 .form-wrapper {
+  width: 90%;
   align-self: center;
   justify-self: center;
   margin-top: 5rem;
