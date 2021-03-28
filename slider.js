@@ -135,8 +135,6 @@ function handleTouchStart(event) {
 
 function handleTouchMove(event) {
 
-
-
     if (!xDown || !yDown) {
       return;
     }

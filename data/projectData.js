@@ -1,6 +1,6 @@
 const projectsData = [
   { title: "Tetris",
-    description: "The classic falling block game written entirely in JS.",
+    description: `The classic falling block game written in JS. Mobile and touch friendly.`,
     live: 'https://jake-tetris.netlify.app',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/tetris-rewrite',
@@ -10,7 +10,7 @@ const projectsData = [
   {
     title: "Snake",
     description: "Mobile friendly Pure JS implementation of snake. ",
-    live: 'hellojake.com/snake',
+    live: 'https://jake-snake.netlify.app',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/multiplayer-snake',
     image: 'images/snake.jpg',
