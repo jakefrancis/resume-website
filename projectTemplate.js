@@ -123,7 +123,6 @@ buildSlider('viewport')
 
 /*
 
-/*
 const rightArrow = document.getElementById('right-arrow')
 
 const next = (event) => {
