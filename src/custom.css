@@ -14,6 +14,12 @@
   color: var(--font-color)
 }
 
+.resume-icon{
+  padding-right: .5rem;
+  position: relative;
+  top: .5rem;
+}
+
 code{
   color: #222
 }
