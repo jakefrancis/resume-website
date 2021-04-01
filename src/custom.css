@@ -348,7 +348,8 @@ a{
 }
 
 .card-title{ 
-  grid-area: title;  
+  grid-area: title;
+  padding: 0 1rem;  
 	padding-top: 1rem;
 
 }
