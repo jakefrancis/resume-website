@@ -42,6 +42,7 @@ const buildProjectSection = (projectArray) => {
        imageContainer.className = 'card-image-wrapper'
        const imageLink = document.createElement('a')
        imageLink.href = project.live
+       imageLink.className ='card-image'
        const image = document.createElement('img')
        image.className = 'card-image'
        image.src = project.image
