@@ -610,7 +610,7 @@ figcaption{
     font-size: 1.6rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 25% 40% 35%;
+    grid-template-rows: 25% 45% 30%;
     grid-template-areas:  
                 "title title"
                 "code image"
@@ -666,7 +666,7 @@ figcaption{
 
   .card-image{
     box-sizing: border-box;
-    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     align-self: center;
     padding: 2rem;
