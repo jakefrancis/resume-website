@@ -40,12 +40,15 @@ const buildProjectSection = (projectArray) => {
        const imageContainer = document.createElement('div')
 
        imageContainer.className = 'card-image-wrapper'
- 
+       const imageLink = document.createElement('a')
+       imageLink.href = project.live
        const image = document.createElement('img')
        image.className = 'card-image'
        image.src = project.image
 
-       imageContainer.appendChild(image)
+
+       imageLink.appendChild(image)
+       imageContainer.appendChild(imageLink)
  
        card.appendChild(imageContainer) 
 

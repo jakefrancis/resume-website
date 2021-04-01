@@ -157,7 +157,8 @@ div {
 }
 
 .img-logo{
-  margin: auto 0;
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 
@@ -220,7 +221,7 @@ p{
 }
 
 .greeting{
-  padding: 50% 0 100% 0;
+  padding: 20vh 0 30vh 0;
 }
 
 .title{
