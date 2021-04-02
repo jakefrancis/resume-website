@@ -112,6 +112,14 @@ div {
   grid-row-end: 3;
   border: solid var(--dark-bg-color) 0.5rem;
 }
+
+.about-me-wrapper{
+  padding: 0 1rem;
+}
+
+.pad-top{
+  margin-top: 2.5rem;
+}
 .am-grid-photo{
   display: flex;
  
@@ -129,6 +137,7 @@ div {
 }
 
 .am-skills-title{
+  margin-top: 2rem;
   text-align: center;
 }
 .border{
@@ -227,7 +236,7 @@ p{
 }
 
 .greeting{
-  padding: 20vh 0 30vh 0;
+  padding: 20vh 0 25vh 0;
 }
 
 .title{
@@ -434,12 +443,12 @@ code{
 
 .page-indicator{
   cursor: pointer;
-  height: 2rem;
-  filter: invert(1)
+  height: 2.5rem;
+  filter: invert(73%) sepia(8%) saturate(2283%) hue-rotate(333deg) brightness(95%) contrast(100%);
 }
 
 .inview{
-  filter: invert(0)
+  filter: invert(99%) sepia(60%) saturate(565%) hue-rotate(299deg) brightness(106%) contrast(92%);
 }
 
 .contact{
@@ -677,6 +686,9 @@ figcaption{
     margin: 0 auto;
     align-self: center;
     border-radius: 4rem;  
+  }
+  .page-indicator{
+    height: 3rem;
   }
 }
 

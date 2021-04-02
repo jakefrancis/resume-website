@@ -148,7 +148,6 @@ function handleTouchMove(event) {
     if(!dirEnd){
       direction = Math.abs(xDiff) > Math.abs(yDiff) ? 'horizontal' : 'vertical'
     }
-    console.log(direction)
     if(direction === 'horizontal'){
       if (event.cancelable) {
         event.preventDefault();
