@@ -46,6 +46,7 @@ const buildProjectSection = (projectArray) => {
        const image = document.createElement('img')
        image.className = 'card-image'
        image.src = project.image
+       image.alt = project.alt
 
 
        imageLink.appendChild(image)
@@ -97,6 +98,7 @@ const buildProjectSection = (projectArray) => {
       const gitHubLogo = document.createElement('img')
       gitHubLogo.className = 'code-logo'
       gitHubLogo.src = 'images/logos/github.svg'
+      gitHubLogo.alt = 'github logo'
       codeLink.appendChild(gitHubLogo)
       
        skillContainer.appendChild(codeLink)

@@ -18,6 +18,7 @@ const buildSlider = (id) => {
 for(let i = 0; i < sliderChildren.length; i++){
     let pageIndicator = document.createElement('img')
      pageIndicator.src = 'images/icons/pageIndicator.svg'
+     pageIndicator.alt ='page idicator icon'
      if(i === 0){
       pageIndicator.className = 'page-indicator inview'
       pageIndicator.setAttribute('id', `${i + 1}pi`)

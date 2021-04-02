@@ -5,6 +5,7 @@ const projectsData = [
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/tetris-rewrite',
     image: 'images/tetris.png',
+    alt: 'a game of tetris in progress',
     demo: '/tetris/'
   },
   {
@@ -14,6 +15,7 @@ const projectsData = [
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/automated-paging-system',
     image: 'images/paging-system.png',
+    alt: 'overview of my paging system',
     demo: 'filepathhere'
   },
   {
@@ -22,6 +24,7 @@ const projectsData = [
     live: 'https://jake-snake.netlify.app',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/multiplayer-snake',
+    alt: 'a game of snake in progress',
     image: 'images/snake.jpg',
     demo: 'filepathhere'    
   },
@@ -32,6 +35,7 @@ const projectsData = [
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/slider',
     image: 'images/slider.png',
+    alt: 'mockup of the slider system',
     demo: 'filepathhere'    
   },
  
