@@ -31,8 +31,25 @@ body{
   background: var(--bg-color);
   background: linear-gradient(180deg, rgba(21,57,86,1) 0%, rgba(18,50,77,1) 25%, rgba(17,47,70,1) 50%, rgba(14,36,54,1) 75%);
 
+  scrollbar-color: var(--emphasis-color) var(--heading-color);
+
 }
 
+.scroll-indicator-right{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0.5rem;
+  background-color: var(--emphasis-color)
+}
+
+.scroll-indicator-left{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0.5rem;
+  background-color: var(--emphasis-color)
+}
 
 div {
   -webkit-tap-highlight-color: rgba(0,0,0,0);

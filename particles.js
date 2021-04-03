@@ -70,9 +70,21 @@ const resize = (wider, taller, previousWidth, previousHeight) => {
     })
 }
 
+function getScrollPercent() {
+  var h = document.documentElement, 
+      b = document.body,
+      st = 'scrollTop',
+      sh = 'scrollHeight';
+  return (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+}
+
+const scrollIndicatorRight = document.getElementById('scroll-indicator-right')
+const scrollIndicatorLeft = document.getElementById('scroll-indicator-left')
 
 const rollParticles = () =>{
-
+  const percent = Math.floor(getScrollPercent)
+  scrollIndicatorRight.style.height = `${getScrollPercent()}%`
+  scrollIndicatorLeft.style.height = `${getScrollPercent()}%`
   let previous = scrollTop
   scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
   for(let particle of particles){
