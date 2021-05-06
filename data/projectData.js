@@ -1,12 +1,23 @@
 const projectsData = [
-  { title: "Tetris",
+  { 
+    title: "Tetris",
     description: `The classic falling block game written in JS. Mobile and touch friendly.`,
-    live: 'https://jake-tetris.netlify.app',
+    live: 'https://tetris.hellojake.com',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/tetris-rewrite',
     image: 'images/tetris.png',
     alt: 'a game of tetris in progress',
     demo: '/tetris/'
+  },
+  {
+    title: "NASA Astronomy Photo of the Day",
+    description: `An Infinitely scrolling website that shows the NASA Astronmy Photo of the Day starting from today. This app utilizes an Express backend proxy server to hide the NASA API key, and caches NASA responses into a MongoDB`,
+    live: 'https://nasa.hellojake.com',
+    technologies: ['React','CSS', 'NodeJS', 'Express', 'MongoDB'],
+    code: 'https://github.com/jakefrancis/nasa-apod-backend',
+    image: 'images/nasa-apod.jpg',
+    alt: 'screenshot of a NASA astrononmy photo of the day website',
+    demo: 'filepathhere'
   },
   {
     title: "Automated Paging System",
@@ -21,7 +32,7 @@ const projectsData = [
   {
     title: "Snake",
     description: "Mobile friendly Pure JS implementation of snake. ",
-    live: 'https://jake-snake.netlify.app',
+    live: 'https://snake.hellojake.com',
     technologies: ['Javascript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/multiplayer-snake',
     alt: 'a game of snake in progress',
