@@ -239,7 +239,7 @@ const resetPosition = (currentPosition) => {
   /* Hooke's law: The force needed to compress or expand a spring
     F = kx
 
-    where F is force generate
+    where F is force generated
     k is the spring constant (positive real number)
     x is the distance from the springs point of equilibrium
     
