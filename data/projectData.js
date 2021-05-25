@@ -2,7 +2,7 @@ const projectsData = [
 
   { 
     title: "Blog Cabin",
-    description: `Responsive fullstack CRUD blog aggregation website. Allows the creation of users. User authentification is implemented via JSON web tokens and password hashing. Utilizes an Express and MongoDB backend, and a React and SASS frontend. Please allow 30s for application to spin up.`,
+    description: `Responsive fullstack CRUD blog aggregation website. Allows the creation of users. User authentification is implemented via JSON web tokens and password hashing. Please allow 30s for application to spin up.`,
     live: 'http://blogcabin.hellojake.com',
     technologies: ['React','SASS', 'NodeJS', 'Express', 'MongoDB'],
     code: 'https://github.com/jakefrancis/blogcabin-frontend',
