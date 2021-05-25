@@ -32,6 +32,16 @@ const projectsData = [
     demo: 'filepathhere'
   },
   {
+    title: "React Trillo",
+    description: "A conversion of the Trillo project from Jonas Schmedtmann's Advanced CSS and SASS course from HTML into React",
+    live: 'https://jake-trillo.netlify.app./',
+    technologies: ['React','SASS'],
+    code: 'https://github.com/jakefrancis/trillo',
+    image: 'images/trillo.png',
+    alt: 'screenshot of the Trillo project',
+    demo: 'filepathhere'
+  },
+  {
     title: "Automated Paging System",
     description: `Sends a custom message to an employee's pager at a designated time. I recommend viewing the source code first for background information`,
     live: 'https://jake-aps.netlify.app',
