@@ -1,4 +1,15 @@
 const projectsData = [
+
+  { 
+    title: "Blog Cabin",
+    description: `Responsive fullstack CRUD blog aggregation website. Allows the creation of users. User authentification is implemented via JSON web tokens and password hashing. Utilizes an Express and MongoDB backend, and a React and SASS frontend. Please allow 30s for application to spin up`,
+    live: 'http://blogcabin.hellojake.com',
+    technologies: ['React','SASS', 'NodeJS', 'Express', 'MongoDB'],
+    code: 'https://github.com/jakefrancis/blogcabin-frontend',
+    image: 'images/blogcabin.png',
+    alt: 'screenshot of blogcabin app',
+    demo: '/blogcabin/'
+  },
   { 
     title: "Tetris",
     description: `The classic falling block game written in JS. Mobile and touch friendly.`,
@@ -9,6 +20,7 @@ const projectsData = [
     alt: 'a game of tetris in progress',
     demo: '/tetris/'
   },
+
   {
     title: "NASA Astronomy Photo of the Day",
     description: `An Infinitely scrolling website that shows the NASA Astronmy Photo of the Day starting from today. This app utilizes an Express backend proxy server to hide the NASA API key, and caches NASA responses into a MongoDB`,
