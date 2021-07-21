@@ -209,6 +209,19 @@ class Particle {
       this.angle = 0
     }
   }
+
+  konami(){
+    let ax = canvasWidth/2 - this.x;
+    let by = canvasHeight/2 - this.y;
+    let c = Math.sqrt(ax * ax + by * by);
+    let gx = ax / c * 0.1;
+    let gy = by / c * 0.1;
+
+    this.dX += gx;
+    this.dY += gy;
+
+
+  }
 }
 
 const randomFromRange = (min, max) => {
@@ -233,8 +246,20 @@ const clearScreen = () => {
   ctx.clearRect(0,0,canvasWidth,canvasHeight)
 }
 
+let timeout = false
+
 const drawParticles = (array) => {
   for(let particle of array){
+    if(konami){
+      particle.konami()
+      if(!timeout){
+        setTimeout(() => {
+          konami = false
+          timeout = false
+        },10000)
+        timeout = true
+      }
+    }
     particle.draw()
     particle.move()
   }
@@ -246,10 +271,31 @@ const canvasLoop = () => {
   window.requestAnimationFrame(canvasLoop)
 }
 
+let konami = false
+
+let codeCharacters = []
+const konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"]
+
+window.addEventListener('keyup', (event) => {
+codeCharacters.push(event.key)
+if(codeCharacters.length > konamiCode.length){
+  codeCharacters.shift()
+}
+if(codeCharacters.length === konamiCode.length){
+  for(let i = 0; i < codeCharacters.length; i++){
+    if(codeCharacters[i] !== konamiCode[i]){
+      return
+    }
+  }
+  konami = true;
+}
+})
+
 init()
 
 window.requestAnimationFrame(canvasLoop)
 
 console.log('Oh looks like we have a detective!🔍')
 console.log('Looking for anything in particular? contact: jake@hellojake.com')
+console.log('⬆⬆⬇⬇⬅➡⬅➡🅱🅰')
 
