@@ -2,6 +2,8 @@
 
 This site is built with HTML CSS and Javascript.
 
+www.hellojake.com
+
 I originally was going to build it with the React frame work, but thought it was overkill for a small static website.
 
 ## Highlights
