@@ -20,17 +20,18 @@ const projectsData = [
     alt: 'a game of tetris in progress',
     demo: '/tetris/'
   },
-
   {
-    title: "NASA Astronomy Photo of the Day",
-    description: `An Infinitely scrolling website that shows the NASA Astronmy Photo of the Day starting from today. This app utilizes an Express backend proxy server to hide the NASA API key, and caches NASA responses into a MongoDB`,
-    live: 'https://nasa.hellojake.com',
-    technologies: ['React','CSS', 'NodeJS', 'Express', 'MongoDB'],
-    code: 'https://github.com/jakefrancis/nasa-apod-backend',
-    image: 'images/nasa-apod.jpg',
-    alt: 'screenshot of a NASA astrononmy photo of the day website',
+    title: "Sortle",
+    description: `Sortle is a trie based search engine that retrieves possible answers for Wordle. Built from the nearly 16,000 valid answers!`,
+    live: 'https://sortle.netlify.app/',
+    technologies: ['Vue', 'CSS', 'JavaScript'],
+    code: 'https://github.com/jakefrancis/sortle',
+    image: 'images/sortle.png',
+    alt: 'The Sortle Home screen',
     demo: 'filepathhere'
   },
+
+
   {
     title: "React Trillo",
     description: "A conversion of the Trillo project from Jonas Schmedtmann's Advanced CSS and SASS course from HTML into React",
@@ -42,10 +43,20 @@ const projectsData = [
     demo: 'filepathhere'
   },
   {
+    title: "NASA Astronomy Photo of the Day",
+    description: `An Infinitely scrolling website that shows the NASA Astronmy Photo of the Day starting from today. This app utilizes an Express backend proxy server to hide the NASA API key, and caches NASA responses into a MongoDB`,
+    live: 'https://nasa.hellojake.com',
+    technologies: ['React','CSS', 'NodeJS', 'Express', 'MongoDB'],
+    code: 'https://github.com/jakefrancis/nasa-apod-backend',
+    image: 'images/nasa-apod.jpg',
+    alt: 'screenshot of a NASA astrononmy photo of the day website',
+    demo: 'filepathhere'
+  },
+  {
     title: "Automated Paging System",
     description: `Sends a custom message to an employee's pager at a designated time. I recommend viewing the source code first for background information`,
     live: 'https://jake-aps.netlify.app',
-    technologies: ['Javascript','HTML','CSS'],
+    technologies: ['JavaScript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/automated-paging-system',
     image: 'images/paging-system.png',
     alt: 'overview of my paging system',
@@ -55,7 +66,7 @@ const projectsData = [
     title: "Snake",
     description: "Mobile friendly Pure JS implementation of snake. ",
     live: 'https://snake.hellojake.com',
-    technologies: ['Javascript','HTML','CSS'],
+    technologies: ['JavaScript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/multiplayer-snake',
     alt: 'a game of snake in progress',
     image: 'images/snake.jpg',
@@ -65,7 +76,7 @@ const projectsData = [
     title: "Slider",
     description: "A physics based slider built with javascript. You're using it right now!",
     live: 'https://jake-slider.netlify.app',
-    technologies: ['Javascript','HTML','CSS'],
+    technologies: ['JavaScript','HTML','CSS'],
     code: 'https://github.com/jakefrancis/slider',
     image: 'images/slider.png',
     alt: 'mockup of the slider system',

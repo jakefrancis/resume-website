@@ -295,7 +295,8 @@ init()
 
 window.requestAnimationFrame(canvasLoop)
 
-console.log('Oh looks like we have a detective!🔍')
-console.log('Looking for anything in particular? contact: jake@hellojake.com')
-console.log('⬆⬆⬇⬇⬅➡⬅➡🅱🅰')
+const consoleFormatting = 'color: rgb(52, 54, 51) ; font-size: 1rem'
+
+console.log('%cOh looks like we have a detective!🔍', consoleFormatting)
+console.log('%c⬆⬆⬇⬇⬅➡⬅➡🅱🅰','color: rgb(52, 54, 51) ; font-size: 2rem')
 
