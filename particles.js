@@ -9,6 +9,54 @@ let canvasHeight = window.innerHeight
 let canvasWidth  = window.innerWidth
 let mobile = false
 
+
+const start = {
+  r: 21,
+  g: 57,
+  b: 86
+}
+
+const end = { 
+  r: 14,
+  g: 36,
+  b: 54
+}
+
+
+class FillStyleGradient {
+  constructor(start, end){
+    this.start = start
+    this.end = end
+    this.rate = this.getRateObject()
+  }
+
+  getRateObject(){
+
+    return {  
+      r: this.getRate(this.start.r, this.end.r),
+      g: this.getRate(this.start.g, this.end.g),
+      b: this.getRate(this.start.b, this.end.b)
+    }
+
+  }
+
+  getRate(start, end){
+    return (start - end) / 100
+  }
+
+  getColorValue(color){
+    return Math.floor(this.start[color] - (this.rate[color] * getScrollPercent()))
+  }
+
+
+  getFillStyle(){
+    return `rgb(${this.getColorValue('r')}, ${this.getColorValue('g')}, ${this.getColorValue('b')})`
+  }
+}
+
+const fillStyleGradient = new FillStyleGradient(start, end)
+let fillStyle = fillStyleGradient.getFillStyle()
+
 const parColor = 'rgb(0, 250, 204, 0.8)'
 let parRadius =  Math.floor((canvasHeight + canvasWidth) / 500)
 
@@ -83,6 +131,7 @@ const scrollIndicatorLeft = document.getElementById('scroll-indicator-left')
 
 const rollParticles = () =>{
   const percent = Math.floor(getScrollPercent)
+  fillStyle = fillStyleGradient.getFillStyle()
   scrollIndicatorRight.style.height = `${getScrollPercent()}%`
   scrollIndicatorLeft.style.height = `${getScrollPercent()}%`
   let previous = scrollTop
@@ -113,6 +162,7 @@ window.onscroll = rollParticles
 const canvas = document.getElementById('particles')
 const dpr = window.devicePixelRatio  || 1
 const ctx = canvas.getContext('2d','particles')
+
 
 canvas.style.width = Math.floor(canvasWidth) + 'px'
 canvas.style.height = Math.floor(canvasHeight) + 'px'
@@ -244,6 +294,8 @@ const init = () => {
 
 const clearScreen = () => {
   ctx.clearRect(0,0,canvasWidth,canvasHeight)
+  ctx.fillStyle = fillStyle
+  ctx.fillRect(0,0,canvasWidth,canvasHeight)
 }
 
 let timeout = false

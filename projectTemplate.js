@@ -2,16 +2,6 @@ import projectsData from './data/projectData.js'
 
 import buildSlider from './slider.js'
 
-/*
-const projectsData = [
-  { title: "Tetris",
-    description: "The classic falling block game written entirely in JS",
-    live: 'www.tetris.com',
-    demo: 'filepathhere'
-  }
-]
-*/
-
 let currentIndex = 0
 
 const buildProjectSection = (projectArray) => {

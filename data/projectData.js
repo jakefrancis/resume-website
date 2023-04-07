@@ -1,15 +1,15 @@
 const projectsData = [
 
-  { 
-    title: "Blog Cabin",
-    description: `Responsive fullstack CRUD blog aggregation website. Allows the creation of users. User authentification is implemented via JSON web tokens and password hashing. Please allow 30s for application to spin up.`,
-    live: 'http://blogcabin.hellojake.com',
-    technologies: ['React','SASS', 'NodeJS', 'Express', 'MongoDB'],
-    code: 'https://github.com/jakefrancis/blogcabin-frontend',
-    image: 'images/blogcabin.png',
-    alt: 'screenshot of blogcabin app',
-    demo: '/blogcabin/'
-  },
+  // { 
+  //   title: "Blog Cabin",
+  //   description: `Responsive fullstack CRUD blog aggregation website. Allows the creation of users. User authentification is implemented via JSON web tokens and password hashing. Please allow 30s for application to spin up.`,
+  //   live: 'http://blogcabin.hellojake.com',
+  //   technologies: ['React','SASS', 'NodeJS', 'Express', 'MongoDB'],
+  //   code: 'https://github.com/jakefrancis/blogcabin-frontend',
+  //   image: 'images/blogcabin.png',
+  //   alt: 'screenshot of blogcabin app',
+  //   demo: '/blogcabin/'
+  // },
   { 
     title: "Tetris",
     description: `The classic falling block game written in JS. Mobile and touch friendly.`,
