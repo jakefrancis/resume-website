@@ -43,16 +43,6 @@ const projectsData = [
     demo: 'filepathhere'
   },
   {
-    title: "NASA Astronomy Photo of the Day",
-    description: `An Infinitely scrolling website that shows the NASA Astronmy Photo of the Day starting from today. This app utilizes an Express backend proxy server to hide the NASA API key, and caches NASA responses into a MongoDB`,
-    live: 'https://nasa.hellojake.com',
-    technologies: ['React','CSS', 'NodeJS', 'Express', 'MongoDB'],
-    code: 'https://github.com/jakefrancis/nasa-apod-backend',
-    image: 'images/nasa-apod.jpg',
-    alt: 'screenshot of a NASA astrononmy photo of the day website',
-    demo: 'filepathhere'
-  },
-  {
     title: "Automated Paging System",
     description: `Sends a custom message to an employee's pager at a designated time. I recommend viewing the source code first for background information`,
     live: 'https://jake-aps.netlify.app',
